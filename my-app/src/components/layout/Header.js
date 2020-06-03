@@ -1,15 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+//Bootstrap Navbar
+import Navbar from "react-bootstrap/Navbar";
+//Component NavBar
 import NavBar from "./NavBar";
 
 
 
 function Header() {
     return (
-        <header className="headerStyle">
-            <h1>ABC - Ace Book Club</h1>
-            <NavBar />
-        </header>
+        <Navbar collapseOnSelect bg="dark" variant="dark" expand="lg" fixed="top">
+            <Navbar.Brand href="/">ABC - Ace Book Club</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <NavBar />
+        </Navbar>
     )
 }
 

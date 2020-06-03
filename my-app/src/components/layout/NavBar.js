@@ -1,18 +1,18 @@
 import React from 'react';
 
-//Bootstrap Navigation Bar
+//Bootstrap Navbar
 import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+
 
 function NavBar() {
     return (
-        <Nav className="justify-content-end" activeKey="/home">
-            <Nav.Item>
-                <Nav.Link href="/">Home</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
+        <Navbar.Collapse className="justify-content-end">
+            <Nav>
+                <Nav.Link href="/" >Home</Nav.Link>
                 <Nav.Link href="/About">About</Nav.Link>
-            </Nav.Item>
-        </Nav>
+            </Nav>
+        </Navbar.Collapse>
     )
 }
 
