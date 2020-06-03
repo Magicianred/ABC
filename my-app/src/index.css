@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Hanged Letters';
+    src: local('HangedLetters'), url(./components/fonts/HangedLetters.ttf) format('truetype');
+}
+
+.brandfont {
+    font-family: Hanged Letters;
+}

@@ -11,6 +11,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
+//CSS page create by me
+import "./index.css";
+
 class App extends Component {
     render() {
         return (
