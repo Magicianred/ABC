@@ -1,9 +1,10 @@
 import React from "react";
+import Search from "./Search";
 
 function Home() {
     return (
         <React.Fragment>
-            <h1>Ancora vuoto</h1>
+            <Search />
         </React.Fragment>
     )
 
