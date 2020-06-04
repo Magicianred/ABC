@@ -2,7 +2,6 @@ import React from "react";
 
 //Bootstrap Form and Button
 import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 
 //Bootstrap Grid System
@@ -15,15 +14,12 @@ function Search() {
     return (
         <React.Fragment>
             <Container fluid>
-                <Row className="justify-content-md-center">
-                    <Col md="auto">
-                        <br />
-                        <br />
-                        <br />
-                        <Form inline>
-                            <FormControl sm={8} type="text" placeholder="Scrivi il nome di un libro..." className=" mr-sm-2" />
+                <Row className="show-grid align-items-center">
+                    <Col md={{ span: 8, offset: 2 }} xs={{span: 8, offset: 1 }}>
+                            <FormControl type="text" placeholder="Scrivi il nome di un libro..." className="mr-sm-2" />
+                    </Col>
+                    <Col>
                             <Button variant="dark" type="submit">Cerca</Button>
-                        </Form>
                     </Col>
                 </Row>
             </Container>
