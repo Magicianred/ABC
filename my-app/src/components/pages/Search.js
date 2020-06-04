@@ -46,7 +46,7 @@ function Search() {
                     </Form.Group>
                     <Form.Group as={Row}>
                         <Col>
-                    <Button variant="dark" type="submit">Cerca</Button>
+                    <Button variant="dark" type="submit"><img src="../images/search.png" alt="search" /></Button>
                         </Col>
                     </Form.Group>
                 </Form.Row>
