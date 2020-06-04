@@ -11,7 +11,7 @@ import Container from "react-bootstrap/Container";
 function About() {
     return (
         <React.Fragment>
-            <Jumbotron>
+            <Jumbotron fluid className="mt-5">
             <Container fluid>
                 <Row>
                     <Col>
