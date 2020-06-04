@@ -1,10 +1,16 @@
 import React from "react";
 import Search from "./Search";
 
+//Bootstrap Jumbotron
+import Jumbotron from "react-bootstrap/Jumbotron";
+
+
 function Home() {
     return (
         <React.Fragment>
-            <Search />
+            <Jumbotron fluid>
+                        <Search />
+            </Jumbotron>
         </React.Fragment>
     )
 
