@@ -18,7 +18,7 @@ class App extends Component {
     render() {
         return (
             <Router>
-                <Header/>
+                <Header />
                 <Container fluid>
                     <Row>
                         <Col>
