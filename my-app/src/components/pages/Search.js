@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect } from "react";
 import axios from "axios";
 
 //Bootstrap Form
@@ -11,49 +11,81 @@ import SearchButton from "./elements/SearchButton";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
+import BookCard from "./elements/BookCard";
+
 
 function Search() {
-
-    const [book, setBook] = useState("");
-    const [result, setResult] = useState([]);
+    const [books, setBooks] = useState([]);
+    const [search, setSearch] = useState();
+    const [submit, setSubmit] = useState(" ");
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(false);
     const [apiKey] = useState(process.env.REACT_APP_API_KEY);
 
-    function handleChange(event) {
-        const book = event.target.value;
 
-        setBook(book);
-    }
-
-    function handleSubmit(event) {
-        event.preventDefault();
-
-        axios.get("https://www.googleapis.com/books/v1/volumes?q="+book+"&key="+apiKey+"&maxResults=40")
-            .then(data => {
-                setResult(data.data.items);
+    useEffect(() => {
+        axios
+            .get("https://www.googleapis.com/books/v1/volumes?q=" + submit + "&key=" + apiKey + "&maxResults=40")
+            .then(res => {
+                setBooks(res.data.items);
+                console.log(res.data);
+                setIsLoading(false);
+                setError(false);
             })
-    }
+            .catch(err => {
+                setError(true);
+            });
+    }, [submit]);
+
+    const updateSeach = e => {
+        setSearch(e.target.value);
+        console.log(setSearch);
+    };
+
+    const getSearch = e => {
+        e.preventDefault();
+        setSubmit(search);
+
+        setSearch("");
+    };
+
+
+
     return (
         <React.Fragment>
             <Container fluid>
-                <Form onSubmit={handleSubmit}>
-                <Form.Row>
-                    <Form.Group as={Col} md={{ span: 6, offset: 3 }} xs={{span: 8, offset: 1 }}>
+                <Form onSubmit={getSearch}>
+                    <Form.Row>
+                        <Form.Group as={Col} md={{span: 6, offset: 3}} xs={{span: 8, offset: 1}}>
                             <Form.Control
-                                onChange={handleChange}
+                                onChange={updateSeach}
                                 type="text"
+                                value={search}
                                 placeholder="Scrivi il nome di un libro..."
                             />
-                    </Form.Group>
-                    <SearchButton />
-                </Form.Row>
+                        </Form.Group>
+                        <SearchButton/>
+                    </Form.Row>
                 </Form>
             </Container>
 
-            {result.map(book => (
-                <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} />
-            ))}
+            {
+                books && books.length > 0 && (
+                    books.map(book => (
+                        <BookCard
+                            key={book.id}
+                            title={book.volumeInfo.title}
+                            link={book.volumeInfo.infoLink}
+                            image={book.volumeInfo.imageLinks.thumbnail}
+                        />
+                    ))
+                )
+            }
+            {!books && (
+                <div> <p>La tua ricerca non ha riportato nessun risultato. Prova a cercare qualcos'altro.</p> </div>
+            )}
         </React.Fragment>
-    );
+    )
 
 }
 
