@@ -13,7 +13,7 @@ function SearchButton() {
     return (
         <Form.Group as={Row}>
             <Col>
-                <Button variant="dark" type="submit"><img src="images/search.png" alt="search" /></Button>
+                <Button variant="secondary" type="submit"><img src="images/search.png" alt="search" /></Button>
             </Col>
         </Form.Group>
     )
