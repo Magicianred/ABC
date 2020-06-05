@@ -15,17 +15,18 @@ import Container from "react-bootstrap/Container";
 function Search() {
 
     const [book, setBook] = useState("");
-
     const [result, setResult] = useState([]);
-    const apiKey = useState(process.env.REACT_APP_API_KEY);
+    const [apiKey] = useState(process.env.REACT_APP_API_KEY);
 
     function handleChange(event) {
         const book = event.target.value;
+
         setBook(book);
     }
 
     function handleSubmit(event) {
         event.preventDefault();
+
         axios.get("https://www.googleapis.com/books/v1/volumes?q="+book+"&key="+apiKey+"&maxResults=40")
             .then(data => {
                 setResult(data.data.items);
