@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 //Bootstrap Form
 import Form from "react-bootstrap/Form";
@@ -15,6 +15,13 @@ import Button from "react-bootstrap/Button";
 
 function Search() {
 
+    //useState Hooks
+    const [book, setBook] = useState('');
+    const onInputChange = (e) => {
+        setBook(e.target.value);
+    }
+
+
     return (
         <React.Fragment>
             <Container fluid>
@@ -23,6 +30,8 @@ function Search() {
                         <Form.Group as={Col} md={{span: 6, offset: 3}} xs={{span: 8, offset: 1}}>
                             <Form.Control
                                 type="search"
+                                value={book}
+                                onChange={onInputChange}
                                 placeholder="Scrivi il nome di un libro..."
                             />
                         </Form.Group>
