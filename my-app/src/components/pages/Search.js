@@ -9,9 +9,10 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import CardDeck from "react-bootstrap/CardDeck";
 
+//Component created by me
 import SearchButton from "./elements/SearchButton";
 import BookCard from "./elements/BookCard";
-
+import Error from "./elements/Error";
 
 
 function Search() {
@@ -20,6 +21,9 @@ function Search() {
     const [book, setBook] = useState('');
     //Updating books search result to state
     const [resultBook, setResultBook] = useState({ items: [] });
+    //Error if you click the search button with empty input value
+    const [error, setError] = useState(false);
+
     const onInputChange = (e) => {
         setBook(e.target.value);
     }
@@ -28,11 +32,17 @@ function Search() {
     let URL = ("https://www.googleapis.com/books/v1/volumes");
 
     const getSearch = async () => {
-        // Call to API using Axios
-        const result = await axios.get(URL + "?q=" + book + "&key=" + apiKey + "&maxResults=40");
-        console.log(result.data);
-        // Books result
-        setResultBook(result.data);
+        setError(false);
+        try {
+            // Call to API using Axios
+            const result = await axios.get(URL + "?q=" + book + "&key=" + apiKey + "&maxResults=40");
+            // Books result
+            setResultBook(result.data);
+        }
+            //Call error if you click the search button with empty input value.
+        catch(error) {
+            setError(true);
+        }
     }
 
     // Submit handler
@@ -43,6 +53,7 @@ function Search() {
         getSearch();
     }
 
+    //UI for books search result
     const items = resultBook.items.map((books, index) => {
             return (
                 <div key={index}>
@@ -69,10 +80,19 @@ function Search() {
                                 placeholder="Scrivi il nome di un libro..."
                             />
                         </Form.Group>
+                        {/*Add the component SearchButton*/}
                         <SearchButton />
                     </Form.Row>
                 </Form>
 
+
+                {/*Show the error to the user*/}
+                {
+                    error && <Error />
+                }
+
+
+                {/*Search result*/}
                 <CardDeck>{items}</CardDeck>
             </Container>
         </React.Fragment>
