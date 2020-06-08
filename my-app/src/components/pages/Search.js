@@ -1,10 +1,8 @@
 import React, {useState} from "react";
 import axios from 'axios';
 
-//Bootstrap Form
+//Bootstrap
 import Form from "react-bootstrap/Form";
-
-//Bootstrap Grid System
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import CardDeck from "react-bootstrap/CardDeck";
@@ -13,6 +11,7 @@ import CardDeck from "react-bootstrap/CardDeck";
 import SearchButton from "./elements/SearchButton";
 import BookCard from "./elements/BookCard";
 import Error from "./elements/Error";
+import Loading from "./elements/Loading";
 
 
 function Search() {
@@ -23,6 +22,8 @@ function Search() {
     const [resultBook, setResultBook] = useState({ items: [] });
     //Error if you click the search button with empty input value
     const [error, setError] = useState(false);
+    //Loading state
+    const [loading, setLoading] = useState(false);
 
     const onInputChange = (e) => {
         setBook(e.target.value);
@@ -32,6 +33,8 @@ function Search() {
     let URL = ("https://www.googleapis.com/books/v1/volumes");
 
     const getSearch = async () => {
+        // Set loading before API operation starts
+        setLoading(true);
         setError(false);
         try {
             // Call to API using Axios
@@ -43,6 +46,8 @@ function Search() {
         catch(error) {
             setError(true);
         }
+        // After API operation end
+        setLoading(false);
     }
 
     // Submit handler
@@ -78,20 +83,26 @@ function Search() {
                                 value={book}
                                 onChange={onInputChange}
                                 placeholder="Scrivi il nome di un libro..."
+                                required
                             />
                         </Form.Group>
                         {/*Add the component SearchButton*/}
                         <SearchButton />
                     </Form.Row>
                 </Form>
+                 <br />
+                {/*Loading*/}
+                {
+                    loading && <Loading />
+                }
 
-
+                 <br />
                 {/*Show the error to the user*/}
                 {
                     error && <Error />
                 }
 
-
+                <br />
                 {/*Search result*/}
                 <CardDeck>{items}</CardDeck>
             </Container>
