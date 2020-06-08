@@ -9,8 +9,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-//Bootstrap Button
-import Button from "react-bootstrap/Button";
+import SearchButton from "./elements/SearchButton";
 
 
 
@@ -26,7 +25,7 @@ function Search() {
     let URL = ("https://www.googleapis.com/books/v1/volumes");
 
     const getSearch = async () => {
-        // Ajax call to API using Axios
+        // Call to API using Axios
         const result = await axios.get(URL + "?q=" + book + "&key=" + apiKey + "&maxResults=40");
         // Books result
         console.log(result.data);
@@ -54,11 +53,7 @@ function Search() {
                                 placeholder="Scrivi il nome di un libro..."
                             />
                         </Form.Group>
-                        <Form.Group as={Row}>
-                            <Col>
-                                <Button variant="secondary" type="submit"><img src="images/search.png" alt="search" /></Button>
-                            </Col>
-                        </Form.Group>
+                        <SearchButton />
                     </Form.Row>
                 </Form>
             </Container>
