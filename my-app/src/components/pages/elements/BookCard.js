@@ -4,24 +4,21 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 
 
+//Bootstrap Button
 import Button from "react-bootstrap/Button";
 
-const BookCard = ({ title, link, image }) => {
 
-    if(!image || image === "N/A"){
-        return null;
-    }
+const BookCard = ({ keys, title}) => {
 
     return (
-        <Card style={ { width: '233px' } } className="m-auto">
-            <Card.Img variant="top" style= { { width: '100%', height: '233px'} } src={image} alt="Card image" />
-    <Card.Body>
-        <a href={link} target="_blank">
-            <Card.Title className='card-title'>{title}</Card.Title>
-            </a>
-    <Button>More info</Button>
-</Card.Body>
-</Card>
+            <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={"http://books.google.com/books/content?id="+ keys +"&printsec=frontcover&img=1&zoom=1&source=gbs_api&key="} alt={title} />
+                <Card.Body>
+                    <Card.Title className='card-title'>{title}</Card.Title>
+                    <Card.Text></Card.Text>
+                    <Button>More info</Button>
+                </Card.Body>
+            </Card>
     );
 };
 

@@ -7,9 +7,10 @@ import Form from "react-bootstrap/Form";
 //Bootstrap Grid System
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
+import CardDeck from "react-bootstrap/CardDeck";
 
 import SearchButton from "./elements/SearchButton";
+import BookCard from "./elements/BookCard";
 
 
 
@@ -17,6 +18,8 @@ function Search() {
 
     //useState Hooks
     const [book, setBook] = useState('');
+    //Updating books search result to state
+    const [resultBook, setResultBook] = useState({ items: [] });
     const onInputChange = (e) => {
         setBook(e.target.value);
     }
@@ -27,8 +30,9 @@ function Search() {
     const getSearch = async () => {
         // Call to API using Axios
         const result = await axios.get(URL + "?q=" + book + "&key=" + apiKey + "&maxResults=40");
-        // Books result
         console.log(result.data);
+        // Books result
+        setResultBook(result.data);
     }
 
     // Submit handler
@@ -38,6 +42,18 @@ function Search() {
         // Call getSearch async function
         getSearch();
     }
+
+    const items = resultBook.items.map((books, index) => {
+            return (
+                <div key={index}>
+                    <BookCard
+                        keys={books.id}
+                        title={books.volumeInfo.title}
+                    />
+                </div>
+            );
+        }
+    )
 
 
     return (
@@ -56,6 +72,8 @@ function Search() {
                         <SearchButton />
                     </Form.Row>
                 </Form>
+
+                <CardDeck>{items}</CardDeck>
             </Container>
         </React.Fragment>
     )
