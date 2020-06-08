@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import axios from 'axios';
 
 //Bootstrap Form
 import Form from "react-bootstrap/Form";
@@ -21,11 +22,29 @@ function Search() {
         setBook(e.target.value);
     }
 
+    const apiKey = (process.env.REACT_APP_API_KEY);
+    let URL = ("https://www.googleapis.com/books/v1/volumes");
+
+    const getSearch = async () => {
+        // Ajax call to API using Axios
+        const result = await axios.get(URL + "?q=" + book + "&key=" + apiKey + "&maxResults=40");
+        // Books result
+        console.log(result.data);
+    }
+
+    // Submit handler
+    const onSubmitHandler = (e) => {
+        // Prevent browser refreshing after form submission
+        e.preventDefault();
+        // Call getSearch async function
+        getSearch();
+    }
+
 
     return (
         <React.Fragment>
             <Container fluid>
-                <Form>
+                <Form onSubmit={onSubmitHandler}>
                     <Form.Row>
                         <Form.Group as={Col} md={{span: 6, offset: 3}} xs={{span: 8, offset: 1}}>
                             <Form.Control
