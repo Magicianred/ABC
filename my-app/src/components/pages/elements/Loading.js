@@ -6,16 +6,22 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
-function Loading() {
+const Loading = ({ loading }) =>  {
     return (
-        <Container fluid>
-            <Row className="justify-content-md-center">
-                <Col md="auto">
-                    <Spinner animation="border" size="md" variant="secondary" />
-                </Col>
-            </Row>
-        </Container>
-    )
+        <>
+        {
+            loading && (
+            <Container fluid>
+                <Row className="justify-content-center">
+                    <Col md="auto">
+                        <Spinner animation="border" size="md" variant="secondary"/>
+                    </Col>
+                </Row>
+            </Container>
+        )
 }
+        </>
+    );
+};
 
 export default Loading;

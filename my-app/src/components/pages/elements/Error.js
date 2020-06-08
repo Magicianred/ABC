@@ -6,9 +6,10 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 
-function Error() {
-
-    return(
+const Error = ({ error }) => {
+    return (
+        <>
+            {error && (
         <Container fluid>
             <Row className="justify-content-md-center">
                 <Col md="auto">
@@ -23,8 +24,9 @@ function Error() {
                 </Col>
             </Row>
         </Container>
-
-    )
-}
+            )}
+        </>
+    );
+};
 
 export default Error;

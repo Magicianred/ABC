@@ -2,16 +2,14 @@ import React, {useState} from "react";
 import axios from 'axios';
 
 //Bootstrap
-import Form from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import CardDeck from "react-bootstrap/CardDeck";
 
 //Component created by me
-import SearchButton from "./elements/SearchButton";
 import BookCard from "./elements/BookCard";
 import Error from "./elements/Error";
 import Loading from "./elements/Loading";
+import BookSearchForm from "./elements/BookSearchForm";
 
 
 function Search() {
@@ -75,32 +73,24 @@ function Search() {
     return (
         <React.Fragment>
             <Container fluid>
-                <Form onSubmit={onSubmitHandler}>
-                    <Form.Row>
-                        <Form.Group as={Col} md={{span: 6, offset: 3}} xs={{span: 8, offset: 1}}>
-                            <Form.Control
-                                type="search"
-                                value={book}
-                                onChange={onInputChange}
-                                placeholder="Scrivi il nome di un libro..."
-                                required
-                            />
-                        </Form.Group>
-                        {/*Add the component SearchButton*/}
-                        <SearchButton />
-                    </Form.Row>
-                </Form>
-                 <br />
-                {/*Loading*/}
-                {
-                    loading && <Loading />
-                }
+                <BookSearchForm
+                    onSubmitHandler={onSubmitHandler}
+                    onInputChange={onInputChange}
+                    book={book}
+                />
 
-                 <br />
+
+                <br />
+                {/*Loading*/}
+                <Loading loading={loading} />
+
+
+
+                <br />
                 {/*Show the error to the user*/}
-                {
-                    error && <Error />
-                }
+                <Error error={error}/>
+
+
 
                 <br />
                 {/*Search result*/}

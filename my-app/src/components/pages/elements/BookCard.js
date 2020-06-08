@@ -8,17 +8,17 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 
-const BookCard = ({ keys, title}) => {
+const BookCard = ({ keys, title }) => {
 
     return (
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={"http://books.google.com/books/content?id="+ keys +"&printsec=frontcover&img=1&zoom=1&source=gbs_api&key="} alt={title} />
-                <Card.Body>
-                    <Card.Title className='card-title'>{title}</Card.Title>
-                    <Card.Text></Card.Text>
-                    <Button>More info</Button>
-                </Card.Body>
-            </Card>
+        <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={"http://books.google.com/books/content?id="+ keys +"&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"} alt={title} />
+            <Card.Body>
+                <Card.Title className='card-title'>{title}</Card.Title>
+                <Card.Text></Card.Text>
+                <Button>More info</Button>
+            </Card.Body>
+        </Card>
     );
 };
 
