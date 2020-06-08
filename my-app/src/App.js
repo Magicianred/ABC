@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
+import InfoPage from './components/pages/InfoPage';
+
 //Component of the page
 import Header from "./components/layout/Header";
 import About from "./components/pages/About";
@@ -14,10 +16,11 @@ import Container from "react-bootstrap/Container";
 //CSS page create by me
 import "./index.css";
 
-class App extends Component {
-    render() {
-        return (
-            <Router>
+const NoMatchRoute = () => <div>Errore 404</div>;
+
+const App = () => {
+    return (
+        <Router>
                 <Header />
                 <Container fluid>
                     <Row>
@@ -27,9 +30,12 @@ class App extends Component {
                         </Col>
                     </Row>
                 </Container>
-            </Router>
-        );
-    }
-}
+            <Switch>
+                <Route path="/" exact component={InfoPage} />
+                <Route component={NoMatchRoute} />
+            </Switch>
+        </Router>
+    );
+};
 
 export default App;
