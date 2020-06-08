@@ -6,10 +6,10 @@ import Container from "react-bootstrap/Container";
 import CardDeck from "react-bootstrap/CardDeck";
 
 //Component created by me
-import BookCard from "./elements/BookCard";
-import Error from "./elements/Error";
-import Loading from "./elements/Loading";
-import BookSearchForm from "./elements/BookSearchForm";
+import BookCard from "./BookCard";
+import Error from "./Error";
+import Loading from "./Loading";
+import BookSearchForm from "./BookSearchForm";
 
 
 function Search() {

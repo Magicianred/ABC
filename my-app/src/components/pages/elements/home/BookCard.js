@@ -16,7 +16,7 @@ const BookCard = ({ keys, title }) => {
             <Card.Body>
                 <Card.Title className='card-title'>{title}</Card.Title>
                 <Card.Text></Card.Text>
-                <Button>More info</Button>
+                <Button>Info</Button>
             </Card.Body>
         </Card>
     );

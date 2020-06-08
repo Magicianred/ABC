@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "./Search";
+import Search from "./elements/home/Search";
 
 //Bootstrap Jumbotron
 import Jumbotron from "react-bootstrap/Jumbotron";
