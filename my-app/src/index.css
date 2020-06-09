@@ -10,3 +10,16 @@
 .jumbotron {
     background-color: #343a40!important;
 }
+
+{/*Component Error404*/}
+.error404 {
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+    color: black;
+}
+
+.darthVader {
+    max-width: 150px;
+    height: auto;
+    object-fit: cover;
+}
