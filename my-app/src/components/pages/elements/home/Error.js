@@ -9,7 +9,8 @@ import Container from "react-bootstrap/Container";
 const Error = ({ error }) => {
     return (
         <>
-            {error && (
+            {
+                error && (
         <Container fluid>
             <Row className="justify-content-md-center">
                 <Col xs="auto">
