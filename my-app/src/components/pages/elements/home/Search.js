@@ -71,7 +71,7 @@ function Search() {
 
 
     return (
-        <React.Fragment>
+        <>
             <Container fluid>
                 <BookSearchForm
                     onSubmitHandler={onSubmitHandler}
@@ -80,23 +80,26 @@ function Search() {
                 />
 
 
-                <br />
+
                 {/*Loading*/}
                 <Loading loading={loading} />
 
 
 
-                <br />
+
                 {/*Show the error to the user*/}
                 <Error error={error}/>
 
 
 
-                <br />
+
                 {/*Search result*/}
                 <CardDeck>{items}</CardDeck>
+
+
+
             </Container>
-        </React.Fragment>
+        </>
     )
 
 }

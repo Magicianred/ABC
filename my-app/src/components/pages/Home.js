@@ -12,7 +12,6 @@ import Container from "react-bootstrap/Container";
 
 function Home() {
     return (
-        <React.Fragment>
             <Container fluid>
                 <Row>
                     <Col>
@@ -22,7 +21,6 @@ function Home() {
                     </Col>
                 </Row>
             </Container>
-        </React.Fragment>
     )
 
 }
