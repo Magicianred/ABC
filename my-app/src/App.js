@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-//import InfoPage from './components/pages/InfoPage';
+import InfoPage from './components/pages/InfoPage';
 
 //Component made by me
 import Header from "./components/layout/Header";
@@ -20,6 +20,7 @@ const App = () => {
                                 <Route path="/" exact component={Home} />
                                 <Route path="/About" component={About}/>
                                 <Route path="/Home" component={Home}/>
+                                <Route path="/book/:bookId" exact component={InfoPage} />
                                 <Route path="*" component={Error404} />
                             </Switch>
         </Router>
