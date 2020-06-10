@@ -15,7 +15,7 @@ const BookSearchForm = ({
     return (
         <Form onSubmit={onSubmitHandler}>
             <Form.Row>
-                <Form.Group as={Col} md={{span: 6, offset: 3}} xs={{span: 8, offset: 1}}>
+                <Form.Group as={Col} md={{span: 6, offset: 3}} xs={{span: 8, offset: 2}}>
                     <Form.Control
                         type="search"
                         value={book}
