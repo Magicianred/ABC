@@ -1,10 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-//Bootstrap Card
+//Bootstrap
 import Card from "react-bootstrap/Card";
-
-
-//Bootstrap Button
 import Button from "react-bootstrap/Button";
 
 
@@ -16,7 +14,7 @@ const BookCard = ({ keys, title }) => {
             <Card.Body>
                 <Card.Title className='card-title'>{title}</Card.Title>
                 <Card.Text></Card.Text>
-                <Button>Info</Button>
+                <Link to={"/book/" + keys}><Button>Mostra Dettagli</Button></Link>
             </Card.Body>
         </Card>
     );
