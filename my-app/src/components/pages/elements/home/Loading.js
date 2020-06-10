@@ -13,7 +13,7 @@ const Loading = ({ loading }) =>  {
             loading && (
             <Container fluid>
                 <Row className="justify-content-center">
-                    <Col md="auto">
+                    <Col xs="auto">
                         <Spinner animation="border" size="md" variant="secondary"/>
                     </Col>
                 </Row>

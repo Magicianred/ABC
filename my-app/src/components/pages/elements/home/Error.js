@@ -12,7 +12,7 @@ const Error = ({ error }) => {
             {error && (
         <Container fluid>
             <Row className="justify-content-md-center">
-                <Col md="auto">
+                <Col xs="auto">
                     <Card border="danger" style={{width: '18rem'}} className="text-center">
                         <Card.Header as="h5">Errore</Card.Header>
                         <Card.Body>
