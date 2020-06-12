@@ -39,6 +39,7 @@ function Search() {
             const result = await axios.get(URL + "?q=" + book + "&key=" + apiKey + "&maxResults=40");
             // Books result
             setResultBook(result.data);
+            console.log(result.data);
         }
             //Call error if you click the search button with empty input value.
         catch(error) {
@@ -63,11 +64,14 @@ function Search() {
                     <BookCard
                         keys={books.id}
                         title={books.volumeInfo.title}
+                        authors={books.volumeInfo.authors}
                     />
                 </div>
             );
         }
     )
+
+
 
 
     return (
