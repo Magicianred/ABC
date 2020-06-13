@@ -37,9 +37,9 @@ const InfoPage = ({ match }) => {
     return (
         <>
             <Link to={`/`}>Torna indietro</Link>
-            <Loading />
-            <Error />
-            <BookInfoPage book={book} />
+            <Loading loading={loading} />
+            <Error error={error} />
+            <BookInfoPage books={book} />
         </>
     );
 };
