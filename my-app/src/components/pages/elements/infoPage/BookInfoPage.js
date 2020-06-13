@@ -3,6 +3,9 @@ import React from "react";
 //Component created by me
 import BookAuthors from "./BookAuthors";
 
+//Bootstrap
+import Card from "react-bootstrap/Card";
+
 const BookInfoPage = ({ books }) => {
     const createDescMarkup = description => {
         return { __html: description };
@@ -12,17 +15,14 @@ const BookInfoPage = ({ books }) => {
         <>
             {
                 books && (
-                    <section>
-                        <div>
-                            <img
+                    <Card>
+                        <Card.Header className="card-title text-center"><strong>{books.volumeInfo.title}</strong></Card.Header>
+                            <Card.Img
+                                style={{ width: '128px', height: '164px' }}
                                 alt={books.volumeInfo.title}
                                 src={"http://books.google.com/books/content?id=" + books.id + "&printsec=frontcover&img=1&zoom=1&source=gbs_api"}
                             />
-                            <div>
-                                <h3>
-                                    <strong>Titolo:</strong> {books.volumeInfo.title}
-                                </h3>
-
+                        <Card>
                                 <p>
                                     <strong>Di:</strong> {BookAuthors(books.volumeInfo.authors)}
                                 </p>
@@ -41,9 +41,8 @@ const BookInfoPage = ({ books }) => {
                                         books.volumeInfo.description
                                     )}
                                 />
-                            </div>
-                        </div>
-                    </section>
+                        </Card>
+                    </Card>
                 )}
             </>
     );
