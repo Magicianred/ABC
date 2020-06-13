@@ -1,13 +1,12 @@
-import React, {Component} from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-import InfoPage from './components/pages/InfoPage';
 
 //Component made by me
 import Header from "./components/layout/Header";
 import About from "./components/pages/About";
 import Home from "./components/pages/Home";
 import Error404 from "./components/pages/Error404";
+import InfoPage from './components/pages/InfoPage';
 
 //CSS page create by me
 import "./index.css";
