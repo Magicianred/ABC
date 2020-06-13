@@ -1,5 +1,3 @@
-import React from "react";
-
 const BookAuthors = (authors) => {
     if (!authors) return ' Autore Anonimo ';
     if (authors.length <= 2) {
