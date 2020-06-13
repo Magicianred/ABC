@@ -10,6 +10,9 @@ import BookCard from "./BookCard";
 import Error from "./Error";
 import Loading from "./Loading";
 import BookSearchForm from "./BookSearchForm";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
 
 
 function Search() {
@@ -98,7 +101,11 @@ function Search() {
 
 
                 {/*Search result*/}
-                <CardDeck>{items}</CardDeck>
+                <Container fluid>
+                    <Row className="justify-content-center">
+                            <CardDeck>{items}</CardDeck>
+                    </Row>
+                </Container>
 
 
 
