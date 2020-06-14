@@ -13,16 +13,16 @@ import "./index.css";
 
 const App = () => {
     return (
-        <Router>
-                <Header />
-                            <Switch>
-                                <Route path="/" exact component={Home} />
-                                <Route path="/About" component={About}/>
-                                <Route path="/Home" component={Home}/>
-                                <Route path="/book/:bookId" exact component={InfoPage} />
-                                <Route path="*" component={Error404} />
-                            </Switch>
-        </Router>
+                    <Router>
+                        <Header />
+                        <Switch>
+                            <Route path="/" exact component={Home} />
+                            <Route path="/About" component={About}/>
+                            <Route path="/Home" component={Home}/>
+                            <Route path="/book/:bookId" exact component={InfoPage} />
+                            <Route path="*" component={Error404} />
+                        </Switch>
+                    </Router>
     );
 };
 
