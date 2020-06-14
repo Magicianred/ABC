@@ -17,7 +17,6 @@ import Container from "react-bootstrap/Container";
 const BookCard = ({ keys, title, authors }) => {
 
     return (
-                <Col>
         <Card className="text-center cardHome" bg="Secondary">
             <Container fluid className="cardImageBg">
                 <Row className="justify-content-center">
@@ -47,8 +46,6 @@ const BookCard = ({ keys, title, authors }) => {
                 <Link target="_blank" to={"/book/" + keys}><Button variant="dark" className="mt-auto">Mostra Dettagli</Button></Link>
             </Card.Body>
         </Card>
-                </Col>
-
     );
 };
 

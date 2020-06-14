@@ -24,11 +24,62 @@
     object-fit: cover;
 }
 
+{/*Home Jumbotron*/}
+@media (max-width: 575px) {
+    .jumbotron {
+        padding: 3rem 1rem 2rem !important;
+    }
+}
+
+{/*Home Card*/}
+{/*xl*/}
+@media (min-width: 1200px) {
+    .cardHome {
+        height: 450px;
+        width: 360px;
+        margin-bottom: 25px !important;
+        margin-top: 25px;
+    }
+}
+
+{/*lg*/}
+@media (min-width: 992px) {
 .cardHome {
     height: 450px;
-    width: 360px;
+    width: 200px;
     margin-bottom: 25px !important;
     margin-top: 25px;
+}
+}
+
+{/*md*/}
+@media (min-width: 768px) {
+    .cardHome {
+        height: 450px;
+        width: 300px;
+        margin-bottom: 25px !important;
+        margin-top: 25px;
+    }
+}
+
+{/*sm*/}
+@media (min-width: 576px) {
+    .cardHome {
+        height: 450px;
+        width: 300px;
+        margin-bottom: 25px !important;
+        margin-top: 25px;
+    }
+}
+
+{/*xs*/}
+@media (max-width: 575px) {
+    .cardHome {
+        height: 450px;
+        width: 250px;
+        margin-bottom: 25px !important;
+        margin-top: 25px;
+    }
 }
 
 .cardImage {
@@ -37,16 +88,6 @@
     margin: 10px 0 10px 0;
 }
 
-.cardImageBg {
-
-}
-
 hr {
     border-top: 1px solid #212529 !important;
-}
-
-@media (max-width: 575px) {
-    .jumbotron {
-        padding: 3rem 1rem 2rem !important;
-    }
 }

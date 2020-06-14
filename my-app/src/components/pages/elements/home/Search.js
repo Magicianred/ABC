@@ -103,7 +103,9 @@ function Search() {
                 {/*Search result*/}
                 <Container fluid>
                     <Row className="justify-content-center">
+                        <Col xl={{offset:0}} lg={{offset:1}} md={{offset:1}} sm={{offset:2}} xs={{offset:0}}>
                             <CardDeck>{items}</CardDeck>
+                        </Col>
                     </Row>
                 </Container>
 
