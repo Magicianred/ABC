@@ -13,6 +13,7 @@ import BookSearchForm from "./BookSearchForm";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import CardGroup from "react-bootstrap/CardGroup";
 
 
 function Search() {
@@ -63,7 +64,7 @@ function Search() {
     //UI for books search result
     const items = resultBook.items.map((books, index) => {
             return (
-                <div key={index}>
+                <div className='col-lg-4 col-sm-6 mb-3' key={index}>
                     <BookCard
                         keys={books.id}
                         title={books.volumeInfo.title}
@@ -87,7 +88,6 @@ function Search() {
                 />
 
 
-
                 {/*Loading*/}
                 <Loading loading={loading} />
 
@@ -99,17 +99,12 @@ function Search() {
 
 
 
-
                 {/*Search result*/}
-                <Container fluid>
-                    <Row className="justify-content-center">
-                        <Col xl={{offset:0}} lg={{offset:1}} md={{offset:1}} sm={{offset:2}} xs={{offset:0}}>
-                            <CardDeck>{items}</CardDeck>
-                        </Col>
+                <Container>
+                    <Row>
+                    {items}
                     </Row>
                 </Container>
-
-
 
             </Container>
         </>

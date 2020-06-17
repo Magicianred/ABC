@@ -8,7 +8,7 @@ import NavBar from "./NavBar";
 
 function Header() {
     return (
-        <Navbar collapseOnSelect bg="dark" variant="dark" expand="lg">
+        <Navbar collapseOnSelect variant="dark" expand="lg">
             <Navbar.Brand href="/Home" className="brandfont">Ace Book Club</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <NavBar />

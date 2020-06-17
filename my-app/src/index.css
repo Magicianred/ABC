@@ -3,12 +3,16 @@
     src: local('HangedLetters'), url(./components/fonts/HangedLetters.ttf) format('truetype');
 }
 
+.navbar {
+    background-color: #102E39 !important;
+}
+
 .brandfont {
-    font-family: Hanged Letters;
+    font-family: 'Hanged Letters', sans-serif;
 }
 
 .jumbotron {
-    background-color: #343a40!important;
+    background-color: #008576!important;
 }
 
 {/*Component Error404*/}
@@ -32,59 +36,63 @@
 }
 
 {/*Home Card*/}
+.cardHome {
+background-color: #B6DDDA !important;
+}
+
+.btn {
+    background-color: #102E39 !important;
+    border-color: #102E39 !important;
+}
+
+.btn:hover {
+    background-color: #1b4757 !important;
+    border-color: #1b4757 !important;;
+}
+
 {/*xl*/}
 @media (min-width: 1200px) {
     .cardHome {
-        height: 450px;
-        width: 360px;
-        margin-bottom: 25px !important;
-        margin-top: 25px;
+        height: 408px;
+        width: 800px;
     }
 }
 
 {/*lg*/}
 @media (min-width: 992px) {
-.cardHome {
-    height: 450px;
-    width: 200px;
-    margin-bottom: 25px !important;
-    margin-top: 25px;
-}
+    .cardHome {
+        height: 408px;
+        width: 800px;
+    }
 }
 
 {/*md*/}
 @media (min-width: 768px) {
     .cardHome {
-        height: 450px;
-        width: 300px;
-        margin-bottom: 25px !important;
-        margin-top: 25px;
+        height: 408px;
+        width: 800px;
     }
 }
 
 {/*sm*/}
 @media (min-width: 576px) {
     .cardHome {
-        height: 450px;
-        width: 300px;
-        margin-bottom: 25px !important;
-        margin-top: 25px;
+        height: 408px;
+        width: 250px;
     }
 }
 
 {/*xs*/}
 @media (max-width: 575px) {
     .cardHome {
-        height: 450px;
-        width: 250px;
-        margin-bottom: 25px !important;
-        margin-top: 25px;
+        height: 408px;
+        width: 221px;
     }
 }
 
 .cardImage {
     width: 128px;
-    height: auto;
+    height: 180px;
     margin: 10px 0 10px 0;
 }
 

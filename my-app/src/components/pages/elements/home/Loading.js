@@ -14,7 +14,7 @@ const Loading = ({ loading }) =>  {
             <Container fluid>
                 <Row className="justify-content-center">
                     <Col xs="auto">
-                        <Spinner animation="border" size="md" variant="secondary"/>
+                        <Spinner animation="border" size="md" variant="light"/>
                     </Col>
                 </Row>
             </Container>
