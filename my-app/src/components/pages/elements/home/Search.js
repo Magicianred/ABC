@@ -3,7 +3,6 @@ import axios from 'axios';
 
 //Bootstrap
 import Container from "react-bootstrap/Container";
-import CardDeck from "react-bootstrap/CardDeck";
 
 //Component created by me
 import BookCard from "./BookCard";
@@ -11,9 +10,6 @@ import Error from "./Error";
 import Loading from "./Loading";
 import BookSearchForm from "./BookSearchForm";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import CardGroup from "react-bootstrap/CardGroup";
 
 
 function Search() {

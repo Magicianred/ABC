@@ -19,52 +19,53 @@ const BookCard = ({ keys, title, authors }) => {
         <>
             <br />
             <br />
-        <Card className="text-center cardHome m-auto" bg="Secondary">
-            <Container fluid>
-                <Row className="justify-content-center">
-                    <Col xs="auto">
-                        <Card.Img
-                            className="justify-content-center cardImage"
-                            xs="auto"
-                            src={"http://books.google.com/books/content?id="+ keys + "&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"}
-                            alt={title}
+            <Card className="cardHome m-auto" bg="Secondary">
+                <Card.Header>
+                    <h5 className="section1 color text-center">
+                        <TextTruncate
+                            line={2}
+                            element="span"
+                            truncateText="…"
+                            text={title}
                         />
-                    </Col>
-                </Row>
-            </Container>
-            <Card.Body>
-                <Card.Title>
-                    <TextTruncate
-                        line={2}
-                        element="span"
-                        truncateText="…"
-                        text={title}
-                    />
-                </Card.Title>
-                <Card.Text>
-                    <span><hr /></span>
-                    <TextTruncate
-                        line={1}
-                        element="span"
-                        truncateText="…"
-                        text={BookAuthors(authors)}
-                    />
-                    </Card.Text>
-            </Card.Body>
-            <div className="card-footer bg-transparent">
-                <Link
-                    target="_blank"
-                    to={"/book/" + keys}
-                >
-                    <Button
-                        className="mt-auto"
+                    </h5>
+                </Card.Header>
+                <Container fluid>
+                    <Row className="justify-content-center">
+                        <Col xs="auto">
+                            <Card.Img
+                                className="justify-content-center cardImage"
+                                xs="auto"
+                                src={"http://books.google.com/books/content?id="+ keys + "&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"}
+                                alt={title}
+                            />
+                        </Col>
+                    </Row>
+                </Container>
+                <Card.Body className="text-center">
+                    <p className="section2 color"><small>di <br />
+                        <TextTruncate
+                            line={2}
+                            element="span"
+                            truncateText="…"
+                            text={BookAuthors(authors)}
+                        /></small>
+                    </p>
+                </Card.Body>
+                <div className="card-footer text-center bg-transparent">
+                    <Link
+                        target="_blank"
+                        to={"/book/" + keys}
                     >
-                        Mostra Dettagli
-                    </Button>
-                </Link>
-            </div>
-        </Card>
-            </>
+                        <Button
+                            className="mt-auto"
+                        >
+                            Mostra Dettagli
+                        </Button>
+                    </Link>
+                </div>
+            </Card>
+        </>
     );
 };
 

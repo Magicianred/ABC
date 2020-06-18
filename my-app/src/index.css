@@ -8,7 +8,7 @@
 }
 
 .brandfont {
-    font-family: 'Hanged Letters', sans-serif;
+    font-family: 'Hanged Letters', normal;
 }
 
 .jumbotron {
@@ -37,7 +37,15 @@
 
 {/*Home Card*/}
 .cardHome {
-background-color: #B6DDDA !important;
+    background-color: #B6DDDA !important;
+    height: 420px;
+    width: 250px;
+}
+
+.cardImage {
+    width: 128px;
+    height: 180px;
+    margin: 10px 0 10px 0;
 }
 
 .btn {
@@ -47,55 +55,31 @@ background-color: #B6DDDA !important;
 
 .btn:hover {
     background-color: #1b4757 !important;
-    border-color: #1b4757 !important;;
+    border-color: #1b4757 !important;
 }
 
-{/*xl*/}
-@media (min-width: 1200px) {
-    .cardHome {
-        height: 408px;
-        width: 800px;
-    }
+.card-header {
+    background-color: #102E39 !important;
 }
 
-{/*lg*/}
-@media (min-width: 992px) {
-    .cardHome {
-        height: 408px;
-        width: 800px;
-    }
+.card-body {
+    padding: 0 10px 10px 10px !important;
 }
 
-{/*md*/}
-@media (min-width: 768px) {
-    .cardHome {
-        height: 408px;
-        width: 800px;
-    }
+.section1 {
+    height: 50px;
+    width: auto;
 }
 
-{/*sm*/}
-@media (min-width: 576px) {
-    .cardHome {
-        height: 408px;
-        width: 250px;
-    }
+.section2 {
+    height: 50px;
+    width: auto;
 }
 
-{/*xs*/}
-@media (max-width: 575px) {
-    .cardHome {
-        height: 408px;
-        width: 221px;
-    }
+h5.color {
+    color: #B6DDDA !important;
 }
 
-.cardImage {
-    width: 128px;
-    height: 180px;
-    margin: 10px 0 10px 0;
-}
-
-hr {
-    border-top: 1px solid #212529 !important;
+p.color {
+    color: #1b4757 !important;
 }
