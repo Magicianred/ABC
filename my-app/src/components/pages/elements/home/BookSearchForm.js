@@ -22,7 +22,7 @@ const BookSearchForm = ({
                     xs={{span: 10, offset: 0}}
                 >
                     <Form.Control
-                        type="search"
+                        type="text"
                         value={book}
                         onChange={onInputChange}
                         placeholder="Scrivi il nome di un libro..."
