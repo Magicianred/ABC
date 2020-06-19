@@ -36,10 +36,12 @@ const InfoPage = ({ match }) => {
 
     return (
         <>
-            <Link to={`/`}>Torna indietro</Link>
+            <div className="infoBG">
+            <Link className="infoBG" to={`/`}>Torna indietro</Link>
             <Loading loading={loading} />
             <Error error={error} />
             <BookInfoPage books={book} />
+            </div>
         </>
     );
 };
