@@ -1,5 +1,5 @@
 const BookAuthors = (authors) => {
-    if (!authors) return ' Autore Anonimo ';
+    if (!authors) return ' Autore non disponibile ';
     if (authors.length <= 2) {
         authors = authors.join(' e ')
     }
