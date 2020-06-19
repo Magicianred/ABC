@@ -53,13 +53,8 @@ const BookCard = ({ keys, title, authors }) => {
                     </p>
                 </Card.Body>
                 <div className="card-footer text-center bg-transparent">
-                    <Link
-                        target="_blank"
-                        to={"/book/" + keys}
-                    >
-                        <Button
-                            className="mt-auto"
-                        >
+                    <Link target="_blank" to={"/book/" + keys}>
+                        <Button className="mt-auto">
                             Mostra Dettagli
                         </Button>
                     </Link>
