@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 
 function About() {
     return (
-        <React.Fragment>
+        <>
             <Container fluid>
                 <Row>
                     <Col>
@@ -25,7 +25,7 @@ function About() {
                     </Col>
                 </Row>
             </Container>
-        </React.Fragment>
+        </>
     )
 
 }

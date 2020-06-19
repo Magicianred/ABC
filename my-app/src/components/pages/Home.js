@@ -12,6 +12,7 @@ import Container from "react-bootstrap/Container";
 
 function Home() {
     return (
+        <>
             <Container fluid>
                 <Row>
                     <Col>
@@ -21,6 +22,7 @@ function Home() {
                     </Col>
                 </Row>
             </Container>
+            </>
     )
 
 }

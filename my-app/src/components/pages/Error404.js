@@ -10,7 +10,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 
 function Error404() {
     return (
-
+<>
         <Jumbotron fluid className="mt-4">
             <Container fluid>
                 <Row className="justify-content-center">
@@ -26,6 +26,7 @@ function Error404() {
                 </Row>
             </Container>
         </Jumbotron>
+  </>
     )
 
 }
