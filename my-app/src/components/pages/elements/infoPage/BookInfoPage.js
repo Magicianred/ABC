@@ -8,9 +8,14 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import ListGroup from "react-bootstrap/ListGroup";
+import Image from "react-bootstrap/Image";
 
 const BookInfoPage = ({ books }) => {
-    const createDescMarkup = description => {
+
+    //If there is a plot or not
+    const createDescMarkup = (description) => {
+        if (description === undefined) return {__html: "Trama non disponibile"};
         return { __html: description };
     };
 
@@ -18,12 +23,15 @@ const BookInfoPage = ({ books }) => {
         <>
             {
                 books && (
-                    <Card style={{}}>
-                        <Card.Header className="card-title text-center"><h5 className="color">{books.volumeInfo.title}</h5></Card.Header>
+                    <div className="infoBG">
+                        <Card.Header className="card-title text-center color">
+                            <h3>{books.volumeInfo.title}<br /></h3>
+                                <h6>{books.volumeInfo.subtitle}</h6>
+                        </Card.Header>
                         <Container fluid>
                             <Row className="justify-content-center mt-4">
                                 <Col xs="auto">
-                                    <Card.Img
+                                    <Image
                                         style={{ width: '128px', height: '164px' }}
                                         alt={books.volumeInfo.title}
                                         src={"http://books.google.com/books/content?id=" + books.id + "&printsec=frontcover&img=1&zoom=1&source=gbs_api"}
@@ -31,30 +39,47 @@ const BookInfoPage = ({ books }) => {
                                 </Col>
                             </Row>
                         </Container>
-                        <Card.Text className="mt-4 text-center">
-                        <p>
-                            <strong>Autore</strong> <br />{BookAuthors(books.volumeInfo.authors)}
-                        </p>
 
-                        <p>
-                            <strong>Data di pubblicazione</strong> <br />{books.volumeInfo.publishedDate}
-                        </p>
-                        <p>
-                            <strong>Editore</strong> <br />{books.volumeInfo.publisher}
-                        </p>
-                        <p>
-                            <strong>Numero di pagine</strong> <br />{books.volumeInfo.pageCount}
-                        </p>
-                        <p className="text-center">
+                        {/*Book Info*/}
+                        {/*First Column*/}
+                        <Row>
+                            <Col className="col1">
+                                <ListGroup className="mt-4">
+                                    <ListGroup.Item className="border-0 infoBG">
+                                        <strong>Autore: </strong>{BookAuthors(books.volumeInfo.authors)}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item className="border-0 infoBG">
+                                        <strong>Data di pubblicazione: </strong>{books.volumeInfo.publishedDate}
+                                    </ListGroup.Item>
+                                </ListGroup>
+                            </Col>
+
+                            {/*Second Column*/}
+                            <Col className="col2">
+                                <ListGroup className="mt-4">
+                                    <ListGroup.Item className="border-0 infoBG">
+                                        <strong>Editore: </strong>{books.volumeInfo.publisher}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item className="border-0 infoBG">
+                                        <strong>Numero di pagine: </strong>{books.volumeInfo.pageCount}
+                                    </ListGroup.Item>
+                                </ListGroup>
+                            </Col>
+                        </Row>
+
+                        {/*Plot*/}
+                        <br />
+                        <div className="text-center">
+                        <span>
                             <strong>Trama</strong> <br />
-                            <div
+                            <span
                                 dangerouslySetInnerHTML={createDescMarkup(
                                     books.volumeInfo.description
                                 )}
                             />
-                        </p>
-                        </Card.Text>
-                    </Card>
+                        </span>
+                    </div>
+                    </div>
                 )}
         </>
     );

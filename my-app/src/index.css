@@ -3,8 +3,11 @@
     src: local('HangedLetters'), url(./components/fonts/HangedLetters.ttf) format('truetype');
 }
 
+
 .navbar {
     background-color: #102E39 !important;
+    color: #B6DDDA !important;
+    text-decoration: none !important;
 }
 
 .brandfont {
@@ -76,10 +79,24 @@
     width: auto;
 }
 
-h5.color {
+h5.color, .card-header.color {
     color: #B6DDDA !important;
 }
 
 p.color {
     color: #1b4757 !important;
+}
+
+{/*Info Page*/}
+.col1 {
+    padding-right: 0 !important;
+}
+
+.col2 {
+    padding-left: 0 !important;
+}
+
+.infoBG {
+    background-color: #008576 !important;
+    color: #B6DDDA !important;
 }
