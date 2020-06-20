@@ -23,7 +23,7 @@ const BookInfoPage = ({ books }) => {
         <>
             {
                 books && (
-                    <div className="infoBG">
+                    <Card className="border-0 infoBG">
                         <Card.Header className="card-title text-center color">
                             <h3>{books.volumeInfo.title}<br /></h3>
                                 <h6>{books.volumeInfo.subtitle}</h6>
@@ -42,6 +42,7 @@ const BookInfoPage = ({ books }) => {
 
                         {/*Book Info*/}
                         {/*First Column*/}
+                        <Container>
                         <Row>
                             <Col className="col1">
                                 <ListGroup className="mt-4">
@@ -70,16 +71,19 @@ const BookInfoPage = ({ books }) => {
                         {/*Plot*/}
                         <br />
                         <div className="text-center">
-                        <span>
                             <strong>Trama</strong> <br />
                             <span
                                 dangerouslySetInnerHTML={createDescMarkup(
                                     books.volumeInfo.description
                                 )}
                             />
-                        </span>
-                    </div>
-                    </div>
+                        </div>
+                        </Container>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </Card>
                 )}
         </>
     );
