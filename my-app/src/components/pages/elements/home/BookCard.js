@@ -19,7 +19,7 @@ const BookCard = ({ keys, title, authors }) => {
         <>
             <br />
             <br />
-            <Card className="cardHome m-auto" bg="Secondary">
+            <Card className="cardHome m-auto border-0" bg="Secondary">
                 <Card.Header>
                     <h5 className="section1 color text-center">
                         <TextTruncate
