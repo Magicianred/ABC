@@ -7,6 +7,9 @@ import BookInfoPage from "./elements/infoPage/BookInfoPage";
 import Loading from "./elements/infoPage/Loading";
 import Error from "./elements/infoPage/Error";
 
+//Bootstrap
+import Image from "react-bootstrap/Image";
+
 const InfoPage = ({ match }) => {
     const {
         params: { bookId },
@@ -36,14 +39,12 @@ const InfoPage = ({ match }) => {
 
     return (
         <>
-            <div className="infoBG">
-            <Link className="infoBG" to={`/`}>Torna indietro</Link>
+            <Link to={`/`}><Image src="images/back.png" /></Link>
             <Loading loading={loading} />
             <Error error={error} />
             <BookInfoPage books={book} />
-            </div>
-        </>
-    );
+    </>
+            );
 };
 
 export default InfoPage;
