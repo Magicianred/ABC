@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
 
-function Crediti() {
+function Credits() {
     return (
         <>
             <Container fluid>
@@ -25,4 +25,4 @@ function Crediti() {
 
 }
 
-export default Crediti;
+export default Credits;
