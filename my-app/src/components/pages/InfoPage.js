@@ -10,6 +10,7 @@ import Error from "./elements/Error";
 //Bootstrap
 import Image from "react-bootstrap/Image";
 
+//It's a page with more info of a single book
 const InfoPage = ({ match }) => {
     const {
         params: { bookId },
@@ -25,6 +26,7 @@ const InfoPage = ({ match }) => {
             setLoading(true);
             setError(false);
             try {
+                //The link is with a unique id of the book
                 const result = await axios.get(URL +"/" + bookId);
                 setBook(result.data);
             } catch (error) {
