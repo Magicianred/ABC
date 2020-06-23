@@ -1,7 +1,7 @@
 import React from "react";
 
 //Component created by me
-import BookAuthors from "./BookAuthors";
+import BookAuthors from "./../BookAuthors";
 
 //Bootstrap
 import Card from "react-bootstrap/Card";

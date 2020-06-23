@@ -3,13 +3,13 @@ import axios from 'axios';
 
 //Bootstrap
 import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 
 //Component created by me
 import BookCard from "./BookCard";
-import Error from "./Error";
-import Loading from "./Loading";
+import Error from "./../Error";
+import Loading from "./../Loading";
 import BookSearchForm from "./BookSearchForm";
-import Row from "react-bootstrap/Row";
 
 
 function Search() {
@@ -71,8 +71,6 @@ function Search() {
     )
 
 
-
-
     return (
         <>
             <Container fluid>
@@ -97,7 +95,7 @@ function Search() {
                 {/*Search result*/}
                 <Container>
                     <Row>
-                    {items}
+                        {items}
                     </Row>
                 </Container>
 

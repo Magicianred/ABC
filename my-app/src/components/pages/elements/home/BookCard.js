@@ -10,7 +10,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
 //Component created by me
-import BookAuthors from "./BookAuthors";
+import BookAuthors from "./../BookAuthors";
 
 
 const BookCard = ({ keys, title, authors }) => {
@@ -36,7 +36,7 @@ const BookCard = ({ keys, title, authors }) => {
                             <Card.Img
                                 className="justify-content-center cardImage"
                                 xs="auto"
-                                src={"http://books.google.com/books/content?id="+ keys + "&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"}
+                                src={"http://books.google.com/books/content?id="+ keys +"&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"}
                                 alt={title}
                             />
                         </Col>
@@ -61,7 +61,7 @@ const BookCard = ({ keys, title, authors }) => {
                 </div>
             </Card>
         </>
-    );
-};
+    )
+}
 
 export default BookCard;

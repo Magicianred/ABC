@@ -4,8 +4,8 @@ import axios from 'axios';
 
 //Component made by me
 import BookInfoPage from "./elements/infoPage/BookInfoPage";
-import Loading from "./elements/infoPage/Loading";
-import Error from "./elements/infoPage/Error";
+import Loading from "./elements/Loading";
+import Error from "./elements/Error";
 
 //Bootstrap
 import Image from "react-bootstrap/Image";
