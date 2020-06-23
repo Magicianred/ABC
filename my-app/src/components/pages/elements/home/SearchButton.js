@@ -1,9 +1,7 @@
 import React from "react";
 
-//Bootstrap Form
+//Bootstrap
 import Form from "react-bootstrap/Form";
-
-//Bootstrap Grid System
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";

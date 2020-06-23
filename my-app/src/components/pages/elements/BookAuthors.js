@@ -1,3 +1,5 @@
+//Created to add a comma or a 'e' between two or more authors
+// If there isn't an author it adds 'Autore non disponibile'
 const BookAuthors = (authors) => {
     if (!authors) return ' Autore non disponibile ';
     if (authors.length <= 2) {

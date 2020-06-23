@@ -27,6 +27,7 @@ function Search() {
         setBook(e.target.value);
     }
 
+    //The api key is hidden
     const apiKey = (process.env.REACT_APP_API_KEY);
     let URL = ("https://www.googleapis.com/books/v1/volumes");
 

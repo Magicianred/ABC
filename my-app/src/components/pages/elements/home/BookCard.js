@@ -20,6 +20,7 @@ const BookCard = ({ keys, title, authors }) => {
             <br />
             <br />
             <Card className="cardHome m-auto border-0" bg="Secondary">
+                {/*Title*/}
                 <Card.Header>
                     <h5 className="section1 color text-center">
                         <TextTruncate
@@ -30,6 +31,7 @@ const BookCard = ({ keys, title, authors }) => {
                         />
                     </h5>
                 </Card.Header>
+                {/*Image*/}
                 <Container fluid>
                     <Row className="justify-content-center">
                         <Col xs="auto">
@@ -42,6 +44,7 @@ const BookCard = ({ keys, title, authors }) => {
                         </Col>
                     </Row>
                 </Container>
+                {/*Authors*/}
                 <Card.Body className="text-center">
                     <p className="section2 color"><small>di <br />
                         <TextTruncate
@@ -52,6 +55,7 @@ const BookCard = ({ keys, title, authors }) => {
                         /></small>
                     </p>
                 </Card.Body>
+                {/*Button*/}
                 <div className="card-footer text-center bg-transparent">
                     <Link target="_blank" to={"/book/" + keys}>
                         <Button className="mt-auto">
