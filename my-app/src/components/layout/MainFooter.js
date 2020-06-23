@@ -10,7 +10,7 @@ function MainFooter() {
             <Navbar fixed="bottom">
                 <a className="navbar" href="https://www.carmensantoro.it">© 2020 Carmen Agnese Santoro</a>
                 <Navbar.Collapse className="justify-content-end">
-                <Nav.Link href="/Crediti" className="navbar">Crediti</Nav.Link>
+                <Nav.Link href="/Credits" className="navbar">Crediti</Nav.Link>
                 </Navbar.Collapse>
             </Navbar>
         </>
