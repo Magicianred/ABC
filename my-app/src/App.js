@@ -7,7 +7,7 @@ import About from "./components/pages/About";
 import Home from "./components/pages/Home";
 import Error404 from "./components/pages/Error404";
 import InfoPage from "./components/pages/InfoPage";
-import MainFooter from "./components/pages/elements/MainFooter";
+import MainFooter from "./components/layout/MainFooter";
 import Credits from "./components/pages/Credits";
 
 //CSS page create by me
