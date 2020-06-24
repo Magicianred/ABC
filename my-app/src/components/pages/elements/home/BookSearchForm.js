@@ -4,9 +4,11 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 
+
 //Component created by me
 import SearchButton from "./SearchButton";
 
+//Search Bar
 const BookSearchForm = ({
                             onSubmitHandler,
                             book,
@@ -22,14 +24,13 @@ const BookSearchForm = ({
                     xs={{span: 10, offset: 0}}
                 >
                     <Form.Control
-                        type="text"
+                        type="search"
                         value={book}
                         onChange={onInputChange}
                         placeholder="Scrivi il nome di un libro..."
-                        required
                     />
                 </Form.Group>
-                {/*Add the component SearchButton*/}
+                {/*Component SearchButton*/}
                 <SearchButton />
             </Form.Row>
         </Form>

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 //Component created by me
 import BookAuthors from "./../BookAuthors";
@@ -24,15 +25,22 @@ const BookInfoPage = ({ books }) => {
             {
                 books && (
                     <Card className="border-0 infoBG">
-                        <Card.Header className="card-title text-center color">
-                            <h3>{books.volumeInfo.title}<br /></h3>
-                                <h6>{books.volumeInfo.subtitle}</h6>
+                        <Card.Header className="card-title color">
+                            {/*Back Button*/}
+                            <Link to={`/`}><Image src="/images/back.png" /></Link>
+                            <h3>
+                                {/*Title*/}
+                                {books.volumeInfo.title}
+                            </h3><br />
+                            {/*Subtitle*/}
+                            <h6>{books.volumeInfo.subtitle}</h6>
                         </Card.Header>
                         <Container fluid>
                             <Row className="justify-content-center mt-4">
                                 <Col xs="auto">
+                                    {/*Image of the book*/}
                                     <Image
-                                        style={{ width: '128px', height: '164px' }}
+                                        className="cardImage"
                                         alt={books.volumeInfo.title}
                                         src={"http://books.google.com/books/content?id=" + books.id + "&printsec=frontcover&img=1&zoom=1&source=gbs_api"}
                                     />
@@ -42,7 +50,6 @@ const BookInfoPage = ({ books }) => {
 
                         {/*Book Info*/}
                         {/*First Column*/}
-                        <Container>
                         <Row>
                             <Col className="col1">
                                 <ListGroup className="mt-4">
@@ -78,7 +85,6 @@ const BookInfoPage = ({ books }) => {
                                 )}
                             />
                         </div>
-                        </Container>
                         <br />
                         <br />
                         <br />
