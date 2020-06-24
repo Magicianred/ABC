@@ -16,10 +16,11 @@ const Error = ({ error }) => {
             <Row className="justify-content-md-center">
                 <Col xs="auto">
                     <Card border="danger" style={{width: '18rem'}} className="text-center">
-                        <Card.Header as="h5">Errore</Card.Header>
+                        <Card.Header as="h5" style={{color: 'red'}}>Errore</Card.Header>
                         <Card.Body>
                             <Card.Text>
-                                Si è verificato un errore durante il recupero dell'API
+                                <br />
+                                Si è verificato un errore!
                             </Card.Text>
                         </Card.Body>
                     </Card>
