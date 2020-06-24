@@ -14,10 +14,13 @@ function About() {
                     <Col>
                         <Jumbotron fluid className="mt-5">
                             <Container fluid>
-                                <Row>
-                                    <Col>
-                                        <p>Sito dedicato a tutti gli amanti dei libri!<br />
-                                            Ti permetterà la ricerca di una vasta collezione di libri e delle informazioni necessarie a scoprirne il contenuto.</p>
+                                <Row className="justify-content-center">
+                                    <Col xs="auto">
+                                        <p>
+                                            <strong>Ace Book Club è una semplice web app costruita con React.js e Google Books API,
+                                            che ti permetterà di cercare i libri e di poter avere anche maggiori informazioni su di essi.
+                                                Troverai non solo l'immagine, il titolo e l'autore, ma anche altre informazioni.</strong>
+                                        </p>
                                     </Col>
                                 </Row>
                             </Container>
