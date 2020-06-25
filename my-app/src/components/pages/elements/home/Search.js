@@ -57,21 +57,6 @@ function Search() {
         getSearch();
     }
 
-    //UI for books search result
-    const items = resultBook.items.map((books, index) => {
-            return (
-                <div className='col-lg-4 col-sm-6 mb-3' key={index}>
-                    <BookCard
-                        keys={books.id}
-                        title={books.volumeInfo.title}
-                        authors={books.volumeInfo.authors}
-                    />
-                </div>
-            );
-        }
-    )
-
-
     return (
         <>
             <Container fluid>
@@ -89,14 +74,15 @@ function Search() {
 
 
                 {/*Show the error to the user*/}
-                <Error error={error}/>
+                <Error error={error} />
 
 
 
                 {/*Search result*/}
                 <Container>
                     <Row>
-                        {items}
+                        {/*UI for books search result*/}
+                        <BookCard resultBook={resultBook} />
                     </Row>
                 </Container>
 

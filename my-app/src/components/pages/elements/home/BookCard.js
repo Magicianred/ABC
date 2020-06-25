@@ -12,60 +12,68 @@ import Container from "react-bootstrap/Container";
 //Component created by me
 import BookAuthors from "./../BookAuthors";
 
-
-const BookCard = ({ keys, title, authors }) => {
-
+//UI for books search result
+const BookCard = ({ resultBook }) => {
     return (
         <>
-            <br />
-            <br />
-            <Card className="cardHome m-auto border-0" bg="Secondary">
-                {/*Title*/}
-                <Card.Header>
-                    <h5 className="section1 color text-center">
-                        <TextTruncate
-                            line={2}
-                            element="span"
-                            truncateText="…"
-                            text={title}
-                        />
-                    </h5>
-                </Card.Header>
-                {/*Image*/}
-                <Container fluid>
-                    <Row className="justify-content-center">
-                        <Col xs="auto">
-                            <Card.Img
-                                className="justify-content-center cardImage"
-                                xs="auto"
-                                src={"http://books.google.com/books/content?id="+ keys +"&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"}
-                                alt={title}
-                            />
-                        </Col>
-                    </Row>
-                </Container>
-                {/*Authors*/}
-                <Card.Body className="text-center">
-                    <p className="section2 color"><small>di <br />
-                        <TextTruncate
-                            line={2}
-                            element="span"
-                            truncateText="…"
-                            text={BookAuthors(authors)}
-                        /></small>
-                    </p>
-                </Card.Body>
-                {/*Button*/}
-                <div className="card-footer text-center bg-transparent">
-                    <Link target="_blank" to={"/book/" + keys}>
-                        <Button className="mt-auto">
-                            Mostra Dettagli
-                        </Button>
-                    </Link>
-                </div>
-            </Card>
+            {
+                resultBook && resultBook.items.map((books, index) => (
+                        <div className='col-lg-4 col-sm-6 mb-3' key={index}>
+                            <br />
+                            <br />
+                            <Card className="cardHome m-auto border-0" bg="Secondary">
+                                {/*Title*/}
+                                <Card.Header>
+                                    <h5 className="section1 color text-center">
+                                        <TextTruncate
+                                            line={2}
+                                            element="span"
+                                            truncateText="…"
+                                            text={books.volumeInfo.title}
+                                        />
+                                    </h5>
+                                </Card.Header>
+                                {/*Image*/}
+                                <Container fluid>
+                                    <Row className="justify-content-center">
+                                        <Col xs="auto">
+                                            <Card.Img
+                                                className="justify-content-center cardImage"
+                                                xs="auto"
+                                                src={"http://books.google.com/books/content?id="+ books.id +"&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"}
+                                                alt={books.volumeInfo.title}
+                                            />
+                                        </Col>
+                                    </Row>
+                                </Container>
+                                {/*Authors*/}
+                                <Card.Body className="text-center">
+                                    <p className="section2 color"><small>di <br />
+                                        <TextTruncate
+                                            line={2}
+                                            element="span"
+                                            truncateText="…"
+                                            text={BookAuthors(books.volumeInfo.authors)}
+                                        /></small>
+                                    </p>
+                                </Card.Body>
+                                {/*Button*/}
+                                <div className="card-footer text-center bg-transparent">
+                                    <Link target="_blank" to={"/book/" + books.id}>
+                                        <Button className="mt-auto">
+                                            Mostra Dettagli
+                                        </Button>
+                                    </Link>
+                                </div>
+                            </Card>
+                        </div>
+                    )
+                )
+            }
         </>
     )
-}
+};
+
+
 
 export default BookCard;
