@@ -68,7 +68,7 @@ input[type=text]:focus,
 }
 
 {/*xs*/}
-@media (max-width: 575px) {
+@media screen and (min-width: 0) and (max-width: 575px) {
     .closeBtn {
         left: 77%;
     }
@@ -78,7 +78,7 @@ input[type=text]:focus,
     }
 }
 {/*sm*/}
-@media (max-width: 767px) {
+@media screen and (min-width: 576px) and (max-width: 767px) {
     .closeBtn {
         left: 75%;
     }
@@ -88,7 +88,7 @@ input[type=text]:focus,
 }
 
 {/*md*/}
-@media (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
     .closeBtn {
         left: 77%;
     }
@@ -98,14 +98,14 @@ input[type=text]:focus,
 }
 
 {/*lg*/}
-@media (max-width: 1199px) {
+@media screen and (min-width: 992px) and (max-width: 1199px) {
     .closeBtn {
         left: 87%;
     }
 }
 
 {/*xl*/}
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
     .closeBtn {
         left: 87.5%;
     }
