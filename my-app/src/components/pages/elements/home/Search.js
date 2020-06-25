@@ -40,6 +40,7 @@ function Search() {
             const result = await axios.get(URL + "?q=" + book + "&key=" + apiKey + "&maxResults=40");
             // Books result
             setResultBook(result.data);
+            console.log(result.data);
         }
             //Call error if you click the search button with empty input value.
         catch(error) {
@@ -59,11 +60,12 @@ function Search() {
 
     return (
         <>
-            <Container fluid>
+            <Container>
                 <BookSearchForm
                     onSubmitHandler={onSubmitHandler}
                     onInputChange={onInputChange}
                     book={book}
+                    setBook={setBook}
                 />
 
 

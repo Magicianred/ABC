@@ -10,12 +10,117 @@
     text-decoration: none !important;
 }
 
+{/*Font of the logo*/}
 .brandfont {
-    font-family: 'Hanged Letters', normal;
+    font-family: 'Hanged Letters', sans-serif;
 }
 
-.jumbotron {
-    background-color: #008576!important;
+{/*Search Bar*/}
+{/*New class for padding right, because in bootstrap don't exists*/}
+.pr-6 {
+    padding-right: 5rem !important;
+}
+
+{/*Search bar without box-shadow*/}
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+[type=text].form-control:focus,
+[contenteditable].form-control:focus {
+    box-shadow: inset 0 -1px 0 #ddd;
+}
+
+{/*Search Button*/}
+.searchBtn {
+    left: 99.5% !important;
+    top: 5px !important;
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: relative;
+    background-color: transparent !important;
+    outline: none !important;  /*Per togliere il bordo al di fuori del bottone*/
+}
+
+.searchBtn:focus {
+    margin: 0;
+    padding: 0;
+}
+@media (max-width: 575px) {
+    .searchBtn {
+        left: 96%;
+    }
+}
+
+{/*Clear Button on Search Bar*/}
+.closeBtn {
+    position: relative;
+    bottom: 38px;
+    color: #1b4757;
+    font-weight: 700;
+    font-size: 20px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: font-size 0.5s ease;
+    background-color: transparent;
+}
+
+{/*xs*/}
+@media (max-width: 575px) {
+    .closeBtn {
+        left: 77%;
+    }
+
+    .pr-6 {
+        padding-right: 4rem !important;
+    }
+}
+{/*sm*/}
+@media (max-width: 767px) {
+    .closeBtn {
+        left: 75%;
+    }
+    .pr-6 {
+        padding-right: 4rem !important;
+    }
+}
+
+{/*md*/}
+@media (max-width: 991px) {
+    .closeBtn {
+        left: 77%;
+    }
+    .pr-6 {
+        padding-right: 4rem !important;
+    }
+}
+
+{/*lg*/}
+@media (max-width: 1199px) {
+    .closeBtn {
+        left: 87%;
+    }
+}
+
+{/*xl*/}
+@media (min-width: 1200px) {
+    .closeBtn {
+        left: 87.5%;
+    }
+    .pr-6 {
+        padding-right: 4rem !important;
+    }
+}
+
+.closeBtn:hover {
+    color: #008576;
+    font-size: 21px;
+}
+
+.closeBtn:focus {
+    outline: none;
 }
 
 {/*Component Error404*/}
@@ -32,6 +137,11 @@
 }
 
 {/*Home Jumbotron*/}
+
+.jumbotron {
+    background-color: #008576!important;
+}
+
 @media (max-width: 575px) {
     .jumbotron {
         padding: 3rem 1rem 2rem !important;
@@ -47,16 +157,16 @@
 
 .cardImage {
     width: 128px;
-    height: 180px;
+    height: 164px;
     margin: 10px 0 10px 0;
 }
 
-.btn {
+.btnCard {
     background-color: #102E39 !important;
     border-color: #102E39 !important;
 }
 
-.btn:hover {
+.btnCard:hover {
     background-color: #1b4757 !important;
     border-color: #1b4757 !important;
 }
@@ -99,4 +209,18 @@ p.color {
 .infoBG {
     background-color: #008576 !important;
     color: #B6DDDA !important;
+}
+
+{/*Credits*/}
+.linkCrediti {
+    color: #B6DDDA !important;
+}
+
+.crediti {
+    color: #102E39 !important;
+}
+
+{/*Background of the button on InfoPage.js*/}
+.colorb{
+    background-color: #008576 !important;
 }

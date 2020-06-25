@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
 //Bootstrap
 import Form from "react-bootstrap/Form";
@@ -7,32 +7,43 @@ import Col from "react-bootstrap/Col";
 
 //Component created by me
 import SearchButton from "./SearchButton";
+import ClearButton from "./ClearButton";
 
 //Search Bar
-const BookSearchForm = ({
-                            onSubmitHandler,
-                            book,
-                            onInputChange,
-                        }) => {
+const BookSearchForm = ({ onSubmitHandler, book, setBook, onInputChange}) => {
+    const inputText = useRef();
+
+    useEffect(() => {
+        inputText.current.focus();
+    });
+
     return (
         <Form onSubmit={onSubmitHandler}>
-            <Form.Row>
                 <Form.Group
                     as={Col}
-                    md={{span: 8, offset: 2}}
-                    sm={{span: 8, offset: 2}}
-                    xs={{span: 10, offset: 0}}
+                    xl={{span:10, offset: 1}}
+                    lg={{span:10, offset: 1}}
+                    md={{span: 9, offset: 1}}
+                    sm={{span: 9, offset: 1}}
+                    xs={{span: 11, offset: 0}}
                 >
                     <Form.Control
-                        type="search"
+                        className="position-absolute rounded-pill pl-3 pr-6"
+                        ref={inputText}
+                        type="text"
                         value={book}
                         onChange={onInputChange}
                         placeholder="Scrivi il nome di un libro..."
                     />
+                    {/*Component SearchButton*/}
+                    <SearchButton />
                 </Form.Group>
-                {/*Component SearchButton*/}
-                <SearchButton />
-            </Form.Row>
+            {/*Clear Button*/}
+            <ClearButton
+                book={book}
+                setBook={setBook}
+            />
+
         </Form>
     );
 };
