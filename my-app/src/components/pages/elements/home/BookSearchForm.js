@@ -10,7 +10,7 @@ import SearchButton from "./SearchButton";
 import ClearButton from "./ClearButton";
 
 //Search Bar
-const BookSearchForm = ({ onSubmitHandler, book, setBook, onInputChange}) => {
+const BookSearchForm = ({ onSubmitHandler, book, setBook, onInputChange }) => {
     const inputText = useRef();
 
     useEffect(() => {
@@ -18,6 +18,7 @@ const BookSearchForm = ({ onSubmitHandler, book, setBook, onInputChange}) => {
     });
 
     return (
+        <>
         <Form onSubmit={onSubmitHandler}>
                 <Form.Group
                     as={Col}
@@ -45,6 +46,7 @@ const BookSearchForm = ({ onSubmitHandler, book, setBook, onInputChange}) => {
             />
 
         </Form>
+    </>
     );
 };
 

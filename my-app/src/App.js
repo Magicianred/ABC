@@ -10,6 +10,7 @@ import InfoPage from "./components/pages/InfoPage";
 import MainFooter from "./components/layout/MainFooter";
 import Credits from "./components/pages/Credits";
 
+
 //CSS page create by me
 import "./index.css";
 
@@ -20,9 +21,9 @@ const App = () => {
 
                         <Switch>
                             <Route path="/" exact component={Home} />
-                            <Route path="/About" component={About}/>
-                            <Route path="/Home" component={Home}/>
-                            <Route path="/Credits" component={Credits}/>
+                            <Route path="/About" component={About} />
+                            <Route path="/Home" component={Home} />
+                            <Route path="/Credits" component={Credits} />
                             <Route path="/book/:bookId" exact component={InfoPage} />
                             <Route path="*" component={Error404} />
                         </Switch>
