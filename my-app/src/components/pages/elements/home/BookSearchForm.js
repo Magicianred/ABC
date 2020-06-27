@@ -35,6 +35,7 @@ const BookSearchForm = ({ onSubmitHandler, book, setBook, onInputChange }) => {
                         value={book}
                         onChange={onInputChange}
                         placeholder="Scrivi il nome di un libro..."
+                        id="search-box"
                     />
                     {/*Component SearchButton*/}
                     <SearchButton />
