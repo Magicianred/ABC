@@ -1,19 +1,23 @@
 import React, {useState} from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import axios from 'axios';
 
 //Bootstrap
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Form from "react-bootstrap/Form";
+
 
 //Component created by me
 import BookCard from "./BookCard";
 import Error from "./../Error";
 import Loading from "./../Loading";
 import BookSearchForm from "./BookSearchForm";
-import MaxResult from "./MaxResult";
+//Filters
+import MaxResult from "./Filters/MaxResult";
+import OrderBy from "./Filters/OrderBy";
+import Filter from "./Filters/Filter";
+
 
 
 function Search() {
@@ -29,9 +33,12 @@ function Search() {
     //You can decide the max result of the research
     const [maxResults, setMaxResults] = useState(9);
 
-    const onInputChange = (e) => {
-        setBook(e.target.value);
+
+    function onInputChange() {
+        const book = document.getElementById("search-box").value;
+        setBook(book);
     }
+
 
     //The api key is hidden
     const apiKey = (process.env.REACT_APP_API_KEY);
@@ -41,13 +48,15 @@ function Search() {
         // Set loading before API operation starts
         setLoading(true);
         setError(false);
+        const filter = document.getElementById("books-type").value;
+        const orderBy = document.getElementById("book-sort-by").value;
         if (maxResults > 40 || maxResults < 1) {
             toast.error('Il risultato deve essere tra 1 e 40!');
             setLoading(false);
         } else {
             try {
                 // Call to API using Axios
-                const result = await axios.get(URL + "?q=" + book + "&key=" + apiKey + "&maxResults=" + maxResults );
+                const result = await axios.get(URL + "?q=" + book + "&key=" + apiKey + "&maxResults=" + maxResults + "&orderBy=" + orderBy + "&filter=" + filter );
                 // Books result
                 setResultBook(result.data);
                 console.log(result.data);
@@ -72,6 +81,8 @@ function Search() {
     return (
         <>
             <Container>
+
+                {/*Form*/}
                 <BookSearchForm
                     onSubmitHandler={onSubmitHandler}
                     onInputChange={onInputChange}
@@ -79,29 +90,36 @@ function Search() {
                     setBook={setBook}
                 />
 
+
+                {/*Max result of the research*/}
                 <MaxResult
                     maxResults={maxResults}
                     setMaxResults={setMaxResults}
                 />
 
+
+                {/*You can change the ordering by setting the orderBy parameter to be one of these values: relevance and newest*/}
+                <OrderBy onInputChange={onInputChange} />
+
+
+                {/*You can use the filter parameter to restrict the returned results further by setting it the to one of the following values:
+                partial, full, free-ebooks, paid-ebooks, ebooks*/}
+                <Filter onInputChange={onInputChange} />
+
+
                 {/*Loading*/}
                 <Loading loading={loading} />
-
-
 
 
                 {/*Show the error to the user*/}
                 <Error error={error} />
 
 
-
                 {/*Search result*/}
                 <Container>
                     <Row>
                         {/*UI for books search result*/}
-                        <BookCard
-                            resultBook={resultBook}
-                        />
+                        <BookCard resultBook={resultBook} />
                     </Row>
                 </Container>
 
