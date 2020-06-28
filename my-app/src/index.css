@@ -161,9 +161,11 @@ input[type=text]:focus,
     margin: 10px 0 10px 0;
 }
 
+{/*btnCard is on BookCard and BookInfoPage*/}
 .btnCard {
     background-color: #102E39 !important;
     border-color: #102E39 !important;
+    color: #B6DDDA !important;
 }
 
 .btnCard:hover {
@@ -198,17 +200,31 @@ p.color {
 }
 
 {/*Info Page*/}
-.col1 {
-    padding-right: 0 !important;
-}
-
-.col2 {
-    padding-left: 0 !important;
-}
-
-.infoBG {
+.table {
     background-color: #008576 !important;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid #102E39 !important;
     color: #B6DDDA !important;
+}
+.infoBG {
+    background-color: #B6DDDA !important;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+}
+
+.object {
+    flex: 0 0;
+    z-index: 2;
+}
+
+.objectLink {
+    flex: auto;
+    margin-left: -32px;
 }
 
 {/*Credits*/}
