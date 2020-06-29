@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 //Component created by me
-import BookAuthors from "./../BookAuthors";
+import {BookAuthors} from "../BookAuthors";
 import {checkPrice, createDescMarkup} from "./BookInfoPageSections";
 
 //Bootstrap
@@ -16,6 +16,9 @@ import Button from "react-bootstrap/Button";
 const BookInfoPage = ({ books }) => {
     return (
         <>
+            <Container fluid className="mt-4 mb-5 mr-1">
+                <Row>
+                    <Col>
             {
                 books && (
                     <Table responsive bordered hover>
@@ -47,7 +50,7 @@ const BookInfoPage = ({ books }) => {
                                             <Image
                                                 className="cardImage"
                                                 alt={books.volumeInfo.title}
-                                                src={"http://books.google.com/books/content?id=" + books.id + "&printsec=frontcover&img=1&zoom=1&source=gbs_api"}
+                                                src={"https://books.google.com/books/content?id=" + books.id + "&printsec=frontcover&img=1&zoom=1&source=gbs_api"}
                                             />
                                         </Col>
                                     </Row>
@@ -98,10 +101,9 @@ const BookInfoPage = ({ books }) => {
                         </tbody>
                     </Table>
                 )}
-            <br />
-            <br />
-            <br />
-            <br />
+                    </Col>
+                </Row>
+            </Container>
         </>
     );
 };
