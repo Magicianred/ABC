@@ -60,7 +60,6 @@ function Search() {
                 const result = await axios.get(URL + "?q=" + book + "&key=" + apiKey + "&maxResults=" + maxResults + "&orderBy=" + orderBy + "&filter=" + filter );
                 // Books result
                 setResultBook(result.data);
-                console.log(result.data);
             }
                 //Call error if you click the search button with empty input value.
             catch (error) {
