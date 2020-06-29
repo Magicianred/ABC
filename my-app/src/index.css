@@ -40,7 +40,7 @@ input[type=text]:focus,
     border: none;
     position: relative;
     background-color: transparent !important;
-    outline: none !important;  /*Per togliere il bordo al di fuori del bottone*/
+    outline: none !important; 
 }
 
 .searchBtn:focus {
