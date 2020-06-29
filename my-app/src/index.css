@@ -67,10 +67,20 @@ input[type=text]:focus,
     background-color: transparent;
 }
 
-{/*xs*/}
-@media screen and (min-width: 0) and (max-width: 575px) {
+@media screen and (min-width: 0) and (max-width: 441px) {
     .closeBtn {
         left: 77%;
+    }
+
+    .pr-6 {
+        padding-right: 4rem !important;
+    }
+}
+
+{/*xs*/}
+@media screen and (min-width: 442px ) and (max-width: 575px) {
+    .closeBtn {
+        left: 82%;
     }
 
     .pr-6 {
@@ -80,7 +90,7 @@ input[type=text]:focus,
 {/*sm*/}
 @media screen and (min-width: 576px) and (max-width: 767px) {
     .closeBtn {
-        left: 75%;
+        left: 83%;
     }
     .pr-6 {
         padding-right: 4rem !important;
@@ -90,7 +100,7 @@ input[type=text]:focus,
 {/*md*/}
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .closeBtn {
-        left: 77%;
+        left: 85%;
     }
     .pr-6 {
         padding-right: 4rem !important;
