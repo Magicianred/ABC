@@ -10,7 +10,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
 //Component created by me
-import {BookAuthors, AddDi} from "./../BookAuthors";
+import {BookAuthors, AddDi} from "../BookAuthors";
 
 //UI for books search result
 const BookCard = ({ resultBook }) => {
@@ -40,7 +40,7 @@ const BookCard = ({ resultBook }) => {
                                             <Card.Img
                                                 className="justify-content-center cardImage"
                                                 xs="auto"
-                                                src={"http://books.google.com/books/content?id="+ books.id +"&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"}
+                                                src={"https://books.google.com/books/content?id="+ books.id +"&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"}
                                                 alt={books.volumeInfo.title}
                                             />
                                         </Col>
