@@ -10,7 +10,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
 //Component created by me
-import BookAuthors from "./../BookAuthors";
+import {BookAuthors, AddDi} from "./../BookAuthors";
 
 //UI for books search result
 const BookCard = ({ resultBook }) => {
@@ -48,13 +48,16 @@ const BookCard = ({ resultBook }) => {
                                 </Container>
                                 {/*Authors*/}
                                 <Card.Body className="text-center">
-                                    <p className="section2 color"><small>di <br />
+                                    <p className="section2 color">
+                                        <small>
+                                        {AddDi(books.volumeInfo.authors)}
                                         <TextTruncate
                                             line={2}
                                             element="span"
                                             truncateText="…"
                                             text={BookAuthors(books.volumeInfo.authors)}
-                                        /></small>
+                                        />
+                                        </small>
                                     </p>
                                 </Card.Body>
                                 {/*Button*/}
