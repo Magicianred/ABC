@@ -63,7 +63,7 @@ const BookCard = ({ resultBook }) => {
                                 {/*Button*/}
                                 <div className="card-footer text-center bg-transparent">
                                     <Link target="_blank" to={"/book/" + books.id}>
-                                        <Button className="mt-auto btnCard">
+                                        <Button className="mt-auto btnCard" variant="light">
                                             Mostra Dettagli
                                         </Button>
                                     </Link>
