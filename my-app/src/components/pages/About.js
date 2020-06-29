@@ -18,7 +18,7 @@ function About() {
                                     <Col xs="auto">
                                         <p>
                                             <strong>Ace Book Club è una semplice web app costruita con React.js e Google Books API,
-                                            che ti permetterà di cercare i libri e di poter avere anche maggiori informazioni su di essi.
+                                            che ti permetterà di cercare i libri e di poter avere anche maggiori informazioni su di essi.<br />
                                                 Troverai non solo l'immagine, il titolo e l'autore, ma anche altre informazioni.</strong>
                                         </p>
                                     </Col>
