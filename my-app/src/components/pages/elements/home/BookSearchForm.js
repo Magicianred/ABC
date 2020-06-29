@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 
 //Bootstrap
 import Form from "react-bootstrap/Form";
@@ -11,26 +11,20 @@ import ClearButton from "./ClearButton";
 
 //Search Bar
 const BookSearchForm = ({ onSubmitHandler, book, setBook, onInputChange }) => {
-    const inputText = useRef();
-
-    useEffect(() => {
-        inputText.current.focus();
-    });
 
     return (
         <>
-        <Form onSubmit={onSubmitHandler}>
+            <Form onSubmit={onSubmitHandler}>
                 <Form.Group
                     as={Col}
                     xl={{span:10, offset: 1}}
                     lg={{span:10, offset: 1}}
-                    md={{span: 9, offset: 1}}
-                    sm={{span: 9, offset: 1}}
-                    xs={{span: 11, offset: 0}}
+                    md={11}
+                    sm={11}
+                    xs={11}
                 >
                     <Form.Control
                         className="position-absolute rounded-pill pl-3 pr-6"
-                        ref={inputText}
                         type="text"
                         value={book}
                         onChange={onInputChange}
@@ -40,14 +34,14 @@ const BookSearchForm = ({ onSubmitHandler, book, setBook, onInputChange }) => {
                     {/*Component SearchButton*/}
                     <SearchButton />
                 </Form.Group>
-            {/*Clear Button*/}
-            <ClearButton
-                book={book}
-                setBook={setBook}
-            />
+                {/*Clear Button*/}
+                <ClearButton
+                    book={book}
+                    setBook={setBook}
+                />
 
-        </Form>
-    </>
+            </Form>
+        </>
     );
 };
 

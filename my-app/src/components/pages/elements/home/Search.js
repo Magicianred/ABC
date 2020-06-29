@@ -6,6 +6,7 @@ import axios from 'axios';
 //Bootstrap
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Form from "react-bootstrap/Form";
 
 
 //Component created by me
@@ -91,21 +92,24 @@ function Search() {
                 />
 
 
-                {/*Max result of the research*/}
-                <MaxResult
-                    maxResults={maxResults}
-                    setMaxResults={setMaxResults}
-                />
+                <Form className="mt-5">
+                    <Form.Row>
 
+                        {/*Max result of the research*/}
+                        <MaxResult
+                            maxResults={maxResults}
+                            setMaxResults={setMaxResults}
+                        />
 
-                {/*You can change the ordering by setting the orderBy parameter to be one of these values: relevance and newest*/}
-                <OrderBy onInputChange={onInputChange} />
+                        {/*You can change the ordering by setting the orderBy parameter to be one of these values: relevance and newest*/}
+                        <OrderBy onInputChange={onInputChange} />
 
+                        {/*You can use the filter parameter to restrict the returned results further by setting it the to one of the following values:
+                         partial, full, free-ebooks, paid-ebooks, ebooks*/}
+                        <Filter onInputChange={onInputChange} />
 
-                {/*You can use the filter parameter to restrict the returned results further by setting it the to one of the following values:
-                partial, full, free-ebooks, paid-ebooks, ebooks*/}
-                <Filter onInputChange={onInputChange} />
-
+                    </Form.Row>
+                </Form>
 
                 {/*Loading*/}
                 <Loading loading={loading} />

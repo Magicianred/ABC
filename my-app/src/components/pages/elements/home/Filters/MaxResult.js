@@ -10,10 +10,9 @@ import Col from "react-bootstrap/Col";
 const MaxResult = ({ maxResults, setMaxResults}) => {
     return (
         <>
-            <Form.Group>
-                <Form.Row className="align-items-center">
-                    <Form.Label><strong>Massimo Risultato</strong></Form.Label>
-                    <Col sm={1} xs={6} className="my-1">
+        <Col sm={11} xs={11} lg={4} xl={4} className="my-1">
+            <Form.Group as={Col} className="mx-3">
+                    <Form.Label><strong>Massimo Risultato:</strong></Form.Label>
                 <Form.Control
                     className="rounded-pill"
                     type='number'
@@ -23,9 +22,8 @@ const MaxResult = ({ maxResults, setMaxResults}) => {
                     onChange={e => setMaxResults(e.target.value)}
                 />
                 <ToastContainer />
-                    </Col>
-                </Form.Row>
             </Form.Group>
+        </Col>
         </>
     )
 

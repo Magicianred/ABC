@@ -8,10 +8,9 @@ import Col from "react-bootstrap/Col";
 const OrderBy = ({ onInputChange }) => {
     return (
         <>
-            <Form.Group>
-                <Form.Row className="align-items-center">
+        <Col sm={11} xs={11} lg={4} xl={4} className="my-1">
+            <Form.Group as={Col} className="mx-3">
                     <Form.Label><strong>Ordina per:</strong></Form.Label>
-                    <Col sm={4} xs={6} className="my-1">
                         <Form.Control
                             className="rounded-pill"
                             onChange={onInputChange}
@@ -22,9 +21,8 @@ const OrderBy = ({ onInputChange }) => {
                             <option value="relevance">Rilevanza</option>
                             <option value="newest">Nuovo</option>
                         </Form.Control>
-                    </Col>
-                </Form.Row>
             </Form.Group>
+        </Col>
         </>
     )
 

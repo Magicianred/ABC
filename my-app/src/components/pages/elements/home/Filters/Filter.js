@@ -8,10 +8,9 @@ import Col from "react-bootstrap/Col";
 const Filter = ({ onInputChange }) => {
     return (
         <>
-            <Form.Group>
-                <Form.Row className="align-items-center">
-                    <Form.Label><strong>Ordina per:</strong></Form.Label>
-                    <Col sm={4} xs={6} className="my-1">
+            <Col sm={11} xs={11} lg={4} xl={4} className="my-1">
+            <Form.Group className="mx-3" as={Col}>
+                    <Form.Label><strong>Filtro:</strong></Form.Label>
                         <Form.Control
                             className="rounded-pill"
                             onChange={onInputChange}
@@ -19,16 +18,15 @@ const Filter = ({ onInputChange }) => {
                             custom
                             id="books-type"
                         >
-                            <option value="full" title="Restituisce solo risultati in cui tutto il testo è visualizzabile">Risultati Completamente Visualizzabili</option>
-                            <option value="partial" title="Restituisce risultati in cui almeno parti del testo sono visualizzabili in anteprima">Risultati Parziali</option>
+                            <option value="partial" title="Restituisce risultati in cui è visualizzabile solo una parte del testo">Risultati Non Completi</option>
+                            <option value="full" title="Restituisce solo risultati in cui tutto il testo è visualizzabile">Risultati Completi</option>
                             <option value="free-ebooks" title="Restituisce solo risultati che sono Google eBooks gratuiti">Ebook Gratuiti</option>
-                            <option value="paid-ebooks" title="Restituisce solo risultati che sono Google eBooks con un prezzo">Con Prezzo</option>
-                            <option value="ebooks" title="Restituisce solo risultati Google eBooks, a pagamento o gratuiti">Ebook Gratuiti e a Pagamento</option>
+                            <option value="paid-ebooks" title="Restituisce solo risultati che sono Google eBooks con un prezzo">Ebook a Pagamento</option>
+                            <option value="ebooks" title="Restituisce solo risultati Google eBooks a pagamento o gratuiti">Ebook Gratuiti e a Pagamento</option>
                             {/*Examples of non-eBooks would be publisher content that is available in limited preview and not for sale, or magazines.*/}
                         </Form.Control>
-                    </Col>
-                </Form.Row>
             </Form.Group>
+            </Col>
         </>
     )
 
