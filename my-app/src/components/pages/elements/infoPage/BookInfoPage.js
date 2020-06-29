@@ -31,7 +31,7 @@ const BookInfoPage = ({ books }) => {
                                             {books.volumeInfo.title}
                                         </h3>
                                         {/*Subtitle*/}
-                                        <h6>{books.volumeInfo.subtitle}</h6>
+                                        <h6>{(books.volumeInfo && books.volumeInfo.subtitle) ? books.volumeInfo.subtitle : " "}</h6>
                                     </div>
                                 </div>
                             </th>
@@ -61,7 +61,9 @@ const BookInfoPage = ({ books }) => {
                         </tr>
                         <tr>
                             <td><strong>Data di pubblicazione</strong></td>
-                            <td style={{width: "50%"}}>{books.volumeInfo.publishedDate}</td>
+                            <td style={{width: "50%"}}>
+                                {(books.volumeInfo && books.volumeInfo.publishedDate) ? books.volumeInfo.publishedDate : "Data non disponibile"}
+                            </td>
                         </tr>
                         <tr>
                             <td><strong>Prezzo</strong></td>
@@ -70,22 +72,28 @@ const BookInfoPage = ({ books }) => {
                                 {checkPrice(books.saleInfo)}
                                 &nbsp;&nbsp;
                                 {/*Download Button*/}
-                                <a target="_blank" href={books.saleInfo.buyLink}>
-                                    <Button variant="light" className="btnCard">Scarica</Button>
+                                <a target="_blank" rel="noopener noreferrer" href={books.saleInfo.buyLink}>
+                                    <Button size="sm" variant="light" className="btnCard">Scarica</Button>
                                 </a>
                             </td>
                         </tr>
                         <tr>
                             <td><strong>Editore</strong></td>
-                            <td style={{width: "50%"}}>{books.volumeInfo.publisher}</td>
+                            <td style={{width: "50%"}}>
+                                {(books.volumeInfo && books.volumeInfo.publisher) ? books.volumeInfo.publisher : "Editore non disponibile"}
+                            </td>
                         </tr>
                         <tr>
                             <td><strong>Numero di pagine</strong></td>
-                            <td style={{width: "50%"}}>{books.volumeInfo.pageCount}</td>
+                            <td style={{width: "50%"}}>
+                                {(books.volumeInfo && books.volumeInfo.pageCount) ? books.volumeInfo.pageCount : "Numero non disponibile"}
+                            </td>
                         </tr>
                         <tr>
                             <td><strong>Trama</strong></td>
-                            <td style={{width: "50%"}}><span dangerouslySetInnerHTML={createDescMarkup(books.volumeInfo.description)} /></td>
+                            <td style={{width: "50%"}}>
+                                <span dangerouslySetInnerHTML={createDescMarkup(books.volumeInfo.description)} />
+                            </td>
                         </tr>
                         </tbody>
                     </Table>
