@@ -15,7 +15,7 @@ function Error404() {
             <Container fluid>
                 <Row className="justify-content-center">
                     <Col xs="auto">
-                        <Image className="darthVader" src="images/DarthVader.png" alt="Darth Vader" />
+                        <Image className="darthVader" src="/images/DarthVader.png" alt="Darth Vader" />
                     </Col>
                 </Row>
                 <Row className="justify-content-center">
