@@ -1,5 +1,5 @@
 
-import React, {useEffect, useState} from "react";
+import React, { useState } from "react";
 
 //Component made by me
 import Search from "./elements/home/Search";
