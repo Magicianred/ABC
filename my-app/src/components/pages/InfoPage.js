@@ -23,7 +23,7 @@ const InfoPage = ({ match }) => {
             setError(false);
             try {
                 //The link is with a unique id of the book
-                const result = await axios.get(URL +"/" + bookId);
+                const result = await axios.get(URL + "/" + bookId);
                 setBook(result.data);
             } catch (error) {
                 setError(true);

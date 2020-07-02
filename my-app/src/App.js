@@ -15,8 +15,10 @@ import Credits from "./components/pages/Credits";
 import "./index.css";
 
 const App = () => {
+
     return (
                     <Router>
+
                         <Header />
 
                         <Switch>
@@ -24,6 +26,7 @@ const App = () => {
                             <Route path="/About" component={About} />
                             <Route path="/Home" component={Home} />
                             <Route path="/Credits" component={Credits} />
+                            <Route path="/search/:searchBook" component={Home} />
                             <Route path="/book/:bookId" exact component={InfoPage} />
                             <Route path="*" component={Error404} />
                         </Switch>

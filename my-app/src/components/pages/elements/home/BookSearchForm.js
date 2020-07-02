@@ -10,7 +10,7 @@ import SearchButton from "./SearchButton";
 import ClearButton from "./ClearButton";
 
 //Search Bar
-const BookSearchForm = ({ onSubmitHandler, book, setBook, onInputChange }) => {
+const BookSearchForm = ({ onSubmitHandler, book, setBook, onInputChange, searchClick }) => {
 
     return (
         <>
@@ -32,14 +32,13 @@ const BookSearchForm = ({ onSubmitHandler, book, setBook, onInputChange }) => {
                         id="search-box"
                     />
                     {/*Component SearchButton*/}
-                    <SearchButton />
+                    <SearchButton searchClick={searchClick} />
                 </Form.Group>
                 {/*Clear Button*/}
                 <ClearButton
                     book={book}
                     setBook={setBook}
                 />
-
             </Form>
         </>
     );

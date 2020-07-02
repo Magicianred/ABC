@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import TextTruncate from 'react-text-truncate';
 
@@ -14,6 +15,17 @@ import {BookAuthors, AddDi} from "../BookAuthors";
 
 //UI for books search result
 const BookCard = ({ resultBook }) => {
+
+    let history = useHistory();
+
+
+
+    function goBackHandle(){
+        const searchBook = document.getElementById('search-box').value;
+        history.push("/search/" + searchBook);
+        console.log(typeof searchBook);
+    }
+
     return (
         <>
             {
@@ -62,7 +74,7 @@ const BookCard = ({ resultBook }) => {
                                 </Card.Body>
                                 {/*Button*/}
                                 <div className="card-footer text-center bg-transparent">
-                                    <Link target="_blank" to={"/book/" + books.id}>
+                                    <Link to={"/book/" + books.id} onClick={goBackHandle}>
                                         <Button className="mt-auto btnCard" variant="light">
                                             Mostra Dettagli
                                         </Button>

@@ -1,10 +1,20 @@
 import React from "react";
 
 //Search Button
-function SearchButton() {
-    return (
+function SearchButton({searchClick}) {
+
+  const [stateSearchClicks, setSearchClicks] = searchClick;
+
+  function clickButton(el){
+    if(el && stateSearchClicks){
+      setSearchClicks(false);
+      el.click();
+    }
+  }
+
+     return (
         <>
-                <button className="searchBtn border-0" type="submit"><img src="images/search.png" alt="search" /></button>
+                <button ref={clickButton} className="searchBtn border-0" type="submit"><img src="/images/search.png" alt="search" /></button>
         </>
     )
 

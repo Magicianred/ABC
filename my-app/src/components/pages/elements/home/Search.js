@@ -8,7 +8,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 
-
 //Component created by me
 import BookCard from "./BookCard";
 import Error from "./../Error";
@@ -21,10 +20,10 @@ import Filter from "./Filters/Filter";
 
 
 
-function Search() {
+function Search({ searchBook, searchClick }) {
+    const [book, setBook] = searchBook;
 
     //useState Hooks
-    const [book, setBook] = useState('');
     //Updating books search result to state
     const [resultBook, setResultBook] = useState({ items: [] });
     //Error if you click the search button with empty input value
@@ -39,6 +38,7 @@ function Search() {
         const book = document.getElementById("search-box").value;
         setBook(book);
     }
+
 
 
     //The api key is hidden
@@ -57,7 +57,7 @@ function Search() {
         } else {
             try {
                 // Call to API using Axios
-                const result = await axios.get(URL + "?q=" + book + "&key=" + apiKey + "&maxResults=" + maxResults + "&orderBy=" + orderBy + "&filter=" + filter );
+                const result = await axios.get(URL + "?q=" + book + "&key=" + apiKey + "&maxResults=" + maxResults + "&orderBy=" + orderBy + "&filter=" + filter )
                 // Books result
                 setResultBook(result.data);
             }
@@ -88,8 +88,8 @@ function Search() {
                     onInputChange={onInputChange}
                     book={book}
                     setBook={setBook}
+                    searchClick={searchClick}
                 />
-
 
                 <Form className="mt-5">
                     <Form.Row>

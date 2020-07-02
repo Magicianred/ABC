@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import { createBrowserHistory } from 'history';
 import {Link} from "react-router-dom";
 
 //Component created by me
@@ -14,6 +15,10 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 
 const BookInfoPage = ({ books }) => {
+
+    const history = createBrowserHistory();
+    console.log(books);
+
     return (
         <>
             <Container fluid className="mt-4 mb-5 mr-1">
@@ -27,7 +32,7 @@ const BookInfoPage = ({ books }) => {
                             <th colSpan="2">
                                 <div className="title">
                                     {/*Back Button*/}
-                                    <Link className="object" to={`/`}><Image src="/images/back.png" /></Link>
+                                    <Button className="object" onClick={() => {history.back()}} to="#"><Image src="/images/back.png" /></Button>
                                     <div className="objectLink text-center">
                                         <h3>
                                             {/*Title*/}
