@@ -1,6 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
 import { createBrowserHistory } from 'history';
-import {Link} from "react-router-dom";
 
 //Component created by me
 import {BookAuthors} from "../BookAuthors";
