@@ -14,7 +14,7 @@ const BookSearchForm = ({ onSubmitHandler, book, setBook, onInputChange, searchC
 
     return (
         <>
-            <Form onSubmit={onSubmitHandler}>
+            <Form className="formOfSearchBar" onSubmit={onSubmitHandler}>
                 <Form.Group
                     as={Col}
                     xl={{span:10, offset: 1}}

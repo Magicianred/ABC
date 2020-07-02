@@ -16,6 +16,10 @@
 }
 
 {/*Search Bar*/}
+form.formOfSearchBar {
+    height: 24px !important;
+}
+
 {/*New class for padding right, because in bootstrap don't exists*/}
 .pr-6 {
     padding-right: 5rem !important;
@@ -40,7 +44,7 @@ input[type=text]:focus,
     border: none;
     position: relative;
     background-color: transparent !important;
-    outline: none !important; 
+    outline: none !important;
 }
 
 .searchBtn:focus {
