@@ -1,5 +1,6 @@
 import React from "react";
 import { createBrowserHistory } from 'history';
+import { Link } from "react-router-dom";
 
 //Component created by me
 import {BookAuthors} from "../BookAuthors";
@@ -31,7 +32,7 @@ const BookInfoPage = ({ books }) => {
                             <th colSpan="2">
                                 <div className="title">
                                     {/*Back Button*/}
-                                    <Button className="object" onClick={() => {history.back()}} to="#"><Image src="/images/back.png" /></Button>
+                                    <Link className="object" onClick={() => {history.back()}} to="#"><Image src="/images/back.png" /></Link>
                                     <div className="objectLink text-center">
                                         <h3>
                                             {/*Title*/}
