@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import { Link } from "react-router-dom";
 import TextTruncate from 'react-text-truncate';
 
@@ -16,9 +16,7 @@ import {BookAuthors, AddDi} from "../BookAuthors";
 //UI for books search result
 const BookCard = ({ resultBook }) => {
 
-    let history = useHistory();
-
-
+    let history = createBrowserHistory();
 
     function goBackHandle(){
         const searchBook = document.getElementById('search-box').value;
