@@ -70,7 +70,7 @@ input[type=text]:focus,
     transition: font-size 0.5s ease;
     background-color: transparent;
 }
-
+{/*This size of the screen doesn't exists on bootstrap*/}
 @media screen and (min-width: 0) and (max-width: 441px) {
     .clearBtn {
         left: 77%;
