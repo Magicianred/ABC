@@ -9,7 +9,7 @@ const OrderBy = ({ onInputChange, orderBy }) => {
     return (
         <>
         <Col sm={11} xs={11} lg={4} xl={4} className="my-1">
-            <Form.Group as={Col} className="mx-3">
+            <Form.Group as={Col}>
                     <Form.Label><strong>Ordina per:</strong></Form.Label>
                         <Form.Control
                             className="rounded-pill"

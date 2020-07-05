@@ -9,7 +9,7 @@ const Filter = ({ onInputChange, filterBy }) => {
     return (
         <>
             <Col sm={11} xs={11} lg={4} xl={4} className="my-1">
-            <Form.Group className="mx-3" as={Col}>
+            <Form.Group as={Col}>
                     <Form.Label><strong>Filtro:</strong></Form.Label>
                         <Form.Control
                             className="rounded-pill"
