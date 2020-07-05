@@ -12,6 +12,7 @@ import Container from "react-bootstrap/Container";
 
 //Component created by me
 import {BookAuthors, AddDi} from "../BookAuthors";
+import NotFound from "./NotFound";
 
 //UI for books search result
 const BookCard = ({ resultBook }) => {
@@ -20,14 +21,16 @@ const BookCard = ({ resultBook }) => {
 
     function goBackHandle(){
         const searchBook = document.getElementById('search-box').value;
-        history.push("/search/" + searchBook);
-        console.log(typeof searchBook);
+        const maxResults = document.getElementById('maxResults').value;
+        const bookSortBy = document.getElementById('book-sort-by').value;
+        const booksType = document.getElementById('books-type').value;
+        history.push("/search/" + searchBook + "?maxResults=" + maxResults + "&sortBy=" + bookSortBy + "&type=" + booksType);
     }
 
     return (
         <>
             {
-                resultBook && resultBook.items.map((books, index) => (
+                resultBook.items ? resultBook.items.map((books, index) => (
                         <div className='col-lg-4 col-sm-6 mb-3' key={index}>
                             <br />
                             <br />
@@ -60,13 +63,13 @@ const BookCard = ({ resultBook }) => {
                                 <Card.Body className="text-center">
                                     <p className="section2 color">
                                         <small>
-                                        {AddDi(books.volumeInfo.authors)}
-                                        <TextTruncate
-                                            line={2}
-                                            element="span"
-                                            truncateText="…"
-                                            text={BookAuthors(books.volumeInfo.authors)}
-                                        />
+                                            {AddDi(books.volumeInfo.authors)}
+                                            <TextTruncate
+                                                line={2}
+                                                element="span"
+                                                truncateText="…"
+                                                text={BookAuthors(books.volumeInfo.authors)}
+                                            />
                                         </small>
                                     </p>
                                 </Card.Body>
@@ -81,7 +84,8 @@ const BookCard = ({ resultBook }) => {
                             </Card>
                         </div>
                     )
-                )
+                    ) :
+                <NotFound />
             }
         </>
     )
