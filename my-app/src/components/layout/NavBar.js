@@ -8,7 +8,7 @@ function NavBar() {
     return (
         <Navbar.Collapse className="justify-content-end">
             <Nav>
-                <Nav.Link href="/Home" >Home</Nav.Link>
+                <Nav.Link href="/" >Home</Nav.Link>
                 <Nav.Link href="/About">About</Nav.Link>
             </Nav>
         </Navbar.Collapse>
