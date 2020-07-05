@@ -8,7 +8,7 @@ import Col from "react-bootstrap/Col";
 const Filter = ({ onInputChange, filterBy }) => {
     return (
         <>
-            <Col sm={11} xs={11} lg={4} xl={4} className="my-1">
+            <Col xs={12} sm={12} md={{span:8, offset: 2}} lg={{span:4, offset:0}} xl={4} className="my-1">
             <Form.Group as={Col}>
                     <Form.Label><strong>Filtro:</strong></Form.Label>
                         <Form.Control
