@@ -19,6 +19,7 @@ const BookCard = ({ resultBook }) => {
 
     let history = createBrowserHistory();
 
+    //Push previous parameters and text that you had searched
     function goBackHandle(){
         const searchBook = document.getElementById('search-box').value;
         const maxResults = document.getElementById('maxResults').value;

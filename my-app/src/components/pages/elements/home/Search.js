@@ -35,6 +35,7 @@ function Search({ searchBook, searchClick, searchParams }) {
 
     //You can decide the max result of the research, but the default is with 12 results
     const [maxResults, setMaxResults] = useState(12);
+    //Others filters
     const [orderBy, setOrderBy] = useState(null);
     const [filterBy, setFilterBy] = useState(null);
 
