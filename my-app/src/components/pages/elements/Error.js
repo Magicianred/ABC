@@ -13,7 +13,9 @@ const Error = ({ error }) => {
             {
                 error && (
         <Container fluid>
-            <Row className="justify-content-md-center">
+            <br />
+            <br />
+            <Row className="justify-content-center">
                 <Col xs="auto">
                     <Card border="danger" style={{width: '15rem'}} className="text-center">
                         <Card.Header as="h5" style={{color: 'red'}}>Errore</Card.Header>
