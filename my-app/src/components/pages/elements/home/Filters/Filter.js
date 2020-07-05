@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 
 //Search Button
-const Filter = ({ onInputChange }) => {
+const Filter = ({ onInputChange, filterBy }) => {
     return (
         <>
             <Col sm={11} xs={11} lg={4} xl={4} className="my-1">
@@ -17,6 +17,7 @@ const Filter = ({ onInputChange }) => {
                             as="select"
                             custom
                             id="books-type"
+                            value={filterBy}
                         >
                             <option value="partial" title="Restituisce risultati in cui è visualizzabile solo una parte del testo">Risultati Non Completi</option>
                             <option value="full" title="Restituisce solo risultati in cui tutto il testo è visualizzabile">Risultati Completi</option>

@@ -20,25 +20,39 @@ import Filter from "./Filters/Filter";
 
 
 
-function Search({ searchBook, searchClick }) {
+function Search({ searchBook, searchClick, searchParams }) {
+    const [params, setParams] = useState(false);
     const [book, setBook] = searchBook;
-
-    //useState Hooks
     //Updating books search result to state
     const [resultBook, setResultBook] = useState({ items: [] });
+
+
     //Error if you click the search button with empty input value
     const [error, setError] = useState(false);
     //Loading state
     const [loading, setLoading] = useState(false);
-    //You can decide the max result of the research
-    const [maxResults, setMaxResults] = useState(9);
 
+
+    //You can decide the max result of the research, but the default is with 12 results
+    const [maxResults, setMaxResults] = useState(12);
+    const [orderBy, setOrderBy] = useState(null);
+    const [filterBy, setFilterBy] = useState(null);
+
+
+    if(params === false){
+        let paramsMaxResults = parseInt(searchParams[0].get("maxResults"));
+        if(paramsMaxResults > 1 && paramsMaxResults < 41){
+            setMaxResults(paramsMaxResults);
+        }
+        setOrderBy(searchParams[0].get("sortBy"));
+        setFilterBy(searchParams[0].get("type"));
+        setParams(true);
+    }
 
     function onInputChange() {
         const book = document.getElementById("search-box").value;
         setBook(book);
     }
-
 
 
     //The api key is hidden
@@ -101,11 +115,11 @@ function Search({ searchBook, searchClick }) {
                         />
 
                         {/*You can change the ordering by setting the orderBy parameter to be one of these values: relevance and newest*/}
-                        <OrderBy onInputChange={onInputChange} />
+                        <OrderBy onInputChange={onInputChange} orderBy={orderBy} />
 
                         {/*You can use the filter parameter to restrict the returned results further by setting it the to one of the following values:
                          partial, full, free-ebooks, paid-ebooks, ebooks*/}
-                        <Filter onInputChange={onInputChange} />
+                        <Filter onInputChange={onInputChange} filterBy={filterBy} />
 
                     </Form.Row>
                 </Form>
