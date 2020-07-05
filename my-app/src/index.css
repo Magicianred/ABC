@@ -58,7 +58,7 @@ input[type=text]:focus,
 }
 
 {/*Clear Button on Search Bar*/}
-.closeBtn {
+.clearBtn {
     position: relative;
     bottom: 38px;
     color: #1b4757;
@@ -72,7 +72,7 @@ input[type=text]:focus,
 }
 
 @media screen and (min-width: 0) and (max-width: 441px) {
-    .closeBtn {
+    .clearBtn {
         left: 77%;
     }
 
@@ -83,7 +83,7 @@ input[type=text]:focus,
 
 {/*xs*/}
 @media screen and (min-width: 442px ) and (max-width: 575px) {
-    .closeBtn {
+    .clearBtn {
         left: 82%;
     }
 
@@ -93,7 +93,7 @@ input[type=text]:focus,
 }
 {/*sm*/}
 @media screen and (min-width: 576px) and (max-width: 767px) {
-    .closeBtn {
+    .clearBtn {
         left: 83%;
     }
     .pr-6 {
@@ -103,7 +103,7 @@ input[type=text]:focus,
 
 {/*md*/}
 @media screen and (min-width: 768px) and (max-width: 991px) {
-    .closeBtn {
+    .clearBtn {
         left: 85%;
     }
     .pr-6 {
@@ -113,15 +113,15 @@ input[type=text]:focus,
 
 {/*lg*/}
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-    .closeBtn {
-        left: 87%;
+    .clearBtn {
+        left: 79%;
     }
 }
 
 {/*xl*/}
 @media screen and (min-width: 1200px) {
-    .closeBtn {
-        left: 87.5%;
+    .clearBtn {
+        left: 79.5%;
     }
     .pr-6 {
         padding-right: 4rem !important;

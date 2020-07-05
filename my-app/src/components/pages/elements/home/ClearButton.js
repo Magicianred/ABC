@@ -14,7 +14,7 @@ const ClearButton = ({ book, setBook }) => {
         <>
             {
                 book.length !== 0 &&
-                <button onClick={handelClick} className="closeBtn">&times;</button>
+                <button onClick={handelClick} className="clearBtn">&times;</button>
             }
         </>
     );
