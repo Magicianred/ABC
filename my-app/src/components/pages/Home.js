@@ -1,5 +1,5 @@
-
 import React, { useState } from "react";
+import { createBrowserHistory } from 'history';
 
 //Component made by me
 import Search from "./elements/home/Search";
@@ -17,28 +17,39 @@ const Home = ({ match }) => {
         params: { searchBook },
     } = match;
 
-    console.log(searchBook);
-
     const [book, setBook] = useState('');
-    const [searchClick, setSearchClick] = useState(false);
-    if(!book && searchBook) {
+    const [params, setParams] = useState(null);
+    const [searchClick, setSearchClick] = useState(null);
+
+    const history = createBrowserHistory();
+
+    if(params === null){
+        setParams(new URLSearchParams(history.location.search));
+    }
+
+
+    if(!book && searchBook && searchClick === null) {
         setBook(searchBook);
         setSearchClick(true);
     }
 
     return (
-      <>
-          <Container fluid>
-              <Row>
-                  <Col>
-                      <Jumbotron fluid className="mt-4">
-                          <Search searchBook={[book, setBook]} searchClick={[searchClick, setSearchClick]}/>
+        <>
+            <Container fluid>
+                <Row>
+                    <Col>
+                        <Jumbotron fluid className="mt-4">
+                            <Search
+                                searchBook={[book, setBook]}
+                                searchClick={[searchClick, setSearchClick]}
+                                searchParams={[params, setParams]}
+                            />
 
-                      </Jumbotron>
-                  </Col>
-              </Row>
-          </Container>
-      </>
+                        </Jumbotron>
+                    </Col>
+                </Row>
+            </Container>
+        </>
     )
 
 
