@@ -30,7 +30,7 @@ const BookInfoPage = ({ books }) => {
                             <th colSpan="2">
                                 <div className="title">
                                     {/*Back Button*/}
-                                    <button className="object btn" style={{"background-color": "transparent", "border-color": "transparent"}} onClick={() => {history.back()}}><Image src="/images/back.png" /></button>
+                                    <button className="object btn" style={{backgroundColor: "transparent", borderColor: "transparent"}} onClick={() => {history.back()}}><Image src="/images/back.png" /></button>
                                     <div className="objectLink text-center">
                                         <h3>
                                             {/*Title*/}
