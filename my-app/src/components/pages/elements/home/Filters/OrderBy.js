@@ -17,7 +17,7 @@ const OrderBy = ({ onInputChange, orderBy }) => {
                             as="select"
                             custom
                             id="book-sort-by"
-                            value={orderBy || undefined}
+                            defaultValue={orderBy || undefined}
                         >
                             <option value="relevance">Rilevanza</option>
                             <option value="newest">Nuovo</option>
