@@ -17,7 +17,7 @@ const Filter = ({ onInputChange, filterBy }) => {
                             as="select"
                             custom
                             id="books-type"
-                            value={filterBy || ""}
+                            value={filterBy || undefined}
                         >
                             <option value="partial" title="Restituisce risultati in cui è visualizzabile solo una parte del testo">Risultati Non Completi</option>
                             <option value="full" title="Restituisce solo risultati in cui tutto il testo è visualizzabile">Risultati Completi</option>
